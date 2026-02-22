@@ -1,0 +1,82 @@
+/* Reseteo básico para que no haya márgenes raros */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor que ocupa toda la pantalla */
+.app-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden; /* Evita scrolls raros en toda la página */
+    background-color: #f0f2f5;
+}
+
+/* ---- SIDEBAR ---- */
+.sidebar-container {
+    width: 30%; /* Ocupa el 30% del ancho */
+    max-width: 400px;
+    background-color: white;
+    border-right: 1px solid #d1d7db;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- ÁREA DE CHAT ---- */
+.chat-container {
+    flex-grow: 1; /* Ocupa todo el resto del espacio disponible */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f2f5; /* Gris clarito de WhatsApp */
+    border-bottom: 1px solid #d1d7db;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* FOTOS REDONDAS */
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Esto hace que sea un círculo perfecto */
+    object-fit: cover; /* Evita que la foto se estire si no es cuadrada */
+}
+
+/* El área central donde van los mensajes */
+.chat-messages-area {
+    flex-grow: 1;
+    overflow-y: auto; /* Si hay muchos mensajes, aparece el scroll */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Separación entre cada mensaje */
+}
+
+.chat-input-area {
+    padding: 10px 20px;
+    background-color: #f0f2f5;
+}
+
+@media (max-width: 768px) {
+    /* En móviles, el Sidebar podría ocupar el 100% y el chat ocultarse, 
+       o viceversa dependiendo de la ruta */
+    .sidebar-container {
+        width: 100% !important;
+        display: block;
+    }
+    .chat-container {
+        display: none; /* Luego con lógica de React mostraremos uno u otro */
+    }
+}

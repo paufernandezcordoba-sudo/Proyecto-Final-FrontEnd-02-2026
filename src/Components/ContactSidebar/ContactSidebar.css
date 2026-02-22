@@ -1,0 +1,83 @@
+.sidebar-container {
+    width: 30%;
+    min-width: 300px;
+    max-width: 450px;
+    background-color: #ffffff;
+    border-right: 1px solid #d1d7db;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f2f5;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-item:hover {
+    background-color: #f5f6f6;
+}
+
+/* CORREGIMOS LAS IMÁGENES GIGANTES */
+.contact-avatar {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%; /* Foto circular como en el ejemplo */
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.contact-info-text h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111b21;
+    margin: 0;
+}
+
+.contact-info-text p {
+    font-size: 13px;
+    color: #667781;
+    margin: 2px 0 0 0;
+}
+
+/* La lista de contactos debe tener scroll si son muchos */
+.contacts-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+/* Contenedor interno para manejar el scroll */
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebar-header {
+    background-color: #f0f2f5;
+    padding: 10px 16px;
+    border-bottom: 1px solid #d1d7db;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-profile h2 {
+    font-size: 16px;
+}
+
+.favorite-text {
+    font-size: 12px;
+    color: #667781;
+    margin-top: 5px;
+}
+

@@ -1,0 +1,35 @@
+/* Contenedor invisible que ocupa todo el ancho (100%) */
+.message-row {
+    display: flex;
+    width: 100%;
+}
+
+/* Si es mi mensaje, empujamos la burbuja a la derecha */
+.message-row.mi-mensaje {
+    justify-content: flex-end;
+}
+
+/* Si es su mensaje, empujamos la burbuja a la izquierda */
+.message-row.su-mensaje {
+    justify-content: flex-start;
+}
+
+/* Estilo general de la burbuja */
+.message-bubble {
+    max-width: 65%; /* Para que no ocupe toda la pantalla a lo ancho */
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14.5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+/* Colores específicos según quién lo manda */
+.message-row.mi-mensaje .message-bubble {
+    background-color: #d9fdd3; /* Verde clarito estilo WhatsApp */
+    border-top-right-radius: 0; /* Detalle estético de la esquinita */
+}
+
+.message-row.su-mensaje .message-bubble {
+    background-color: #ffffff; /* Blanco */
+    border-top-left-radius: 0; 
+}

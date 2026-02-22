@@ -1,0 +1,31 @@
+.message-form {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f0f2f5;
+    gap: 10px;
+}
+
+.message-input {
+    flex-grow: 1;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 15px;
+    outline: none;
+    resize: none; /* Evita que el usuario cambie el tamaño manualmente */
+    height: 40px;
+}
+
+.send-button {
+    background-color: #00a884; /* El verde característico de WhatsApp */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
