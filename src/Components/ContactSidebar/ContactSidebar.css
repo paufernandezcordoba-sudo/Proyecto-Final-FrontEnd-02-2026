@@ -1,13 +1,3 @@
-.sidebar-container {
-    width: 30%;
-    min-width: 300px;
-    max-width: 450px;
-    background-color: #ffffff;
-    border-right: 1px solid #d1d7db;
-    display: flex;
-    flex-direction: column;
-}
-
 .contact-item {
     display: flex;
     align-items: center;
@@ -33,16 +23,16 @@
 }
 
 .contact-info-text h3 {
-    font-size: 16px;
-    font-weight: 500;
-    color: #111b21;
+    font-size: 14px;
+    font-weight: 500; /* Peso medio para el nombre */
+    color: #111b21;   /* Casi negro */
     margin: 0;
 }
 
 .contact-info-text p {
-    font-size: 13px;
-    color: #667781;
-    margin: 2px 0 0 0;
+    font-size: 14px;
+    color: #667781;   /* Gris de estado */
+    margin-top: 2px;
 }
 
 /* La lista de contactos debe tener scroll si son muchos */
@@ -50,6 +40,16 @@
     flex-grow: 1;
     overflow-y: auto;
     background-color: #fff;
+}
+
+.sidebar-container {
+    width: 30%;
+    min-width: 300px;
+    max-width: 450px;
+    background-color: #ffffff;
+    border-right: 1px solid #d1d7db;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Contenedor interno para manejar el scroll */
@@ -63,6 +63,12 @@
     background-color: #f0f2f5;
     padding: 10px 16px;
     border-bottom: 1px solid #d1d7db;
+}
+
+.sidebar-header h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111b21;
 }
 
 .user-profile {
@@ -81,3 +87,67 @@
     margin-top: 5px;
 }
 
+/* Para pantallas móviles (320px a 600px) */
+@media (max-width: 600px) {
+    .sidebar {
+        flex: 1; /* En móvil, si no hay chat abierto, el sidebar ocupa todo */
+        min-width: 320px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        gap: 12px; /* Espacio entre foto y textos como en tu captura */
+    }
+
+    .contact-avatar {
+        width: 55px; /* Tamaño exacto de la captura */
+        height: 55px;
+    }
+
+    .contact-info-text {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        border-bottom: 1px solid #f2f2f2; /* Línea divisoria sutil */
+        padding-bottom: 10px;
+    }
+
+    /* El nombre y la fecha en la misma línea */
+    .contact-header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact-info-text h3 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #000;
+        margin: 0;
+    }
+
+    .contact-date {
+        font-size: 10px;
+        color: #667781;
+    }
+
+    /* El mensaje de abajo (novedades, fotos, etc) */
+    .last-message-preview {
+        font-size: 12px;
+        color: #667781;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Para que no se pase de largo */
+        margin-top: 2px;
+    }
+}
+
+/* --- AJUSTES PARA PANTALLAS GRANDES (1200px a 2000px) --- */
+@media (min-width: 1200px) {
+    .sidebar {
+        flex: 0 0 25%; /* Que no crezca demasiado, 25% es ideal */
+        max-width: 400px; /* Límite para que no se vea gigante en 2000px */
+    }
+}

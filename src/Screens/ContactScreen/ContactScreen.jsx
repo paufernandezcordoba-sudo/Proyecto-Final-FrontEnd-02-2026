@@ -5,6 +5,7 @@ import ContactSidebar from "../../Components/ContactSidebar/ContactSidebar.jsx";
 import NewMessageForm from '../../Components/NewMessageForm/NewMessageForm.jsx';
 import Messages from '../../Components/Messages/Messages.jsx';
 import './ContactScreen.css';
+import { CiMenuKebab } from "react-icons/ci";
 
 export default function ContactScreen() {
   const { contactsState } = useContext(ContactsContext); 
@@ -43,7 +44,7 @@ export default function ContactScreen() {
                   <span>{contact_selected.last_time_connection || "Conectado recientemente"}</span>
                 </div>
               </div>
-              <button className="btn-salir">Salir</button>
+              <button className="btn-salir"><CiMenuKebab /></button>
             </header>
 
             {/* Área de mensajes con scroll independiente */}

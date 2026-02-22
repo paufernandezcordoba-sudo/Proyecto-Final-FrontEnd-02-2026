@@ -5,6 +5,8 @@ import ContactScreen from './Screens/ContactScreen/ContactScreen'
 import ErrorNotFoundScreen from './Screens/ErrorNotFoundScreen/ErrorNotFoundScreen'
 import { getContacts } from './services/contactsService'
 import ContactsContextProvider from "./Components/Context/ContactsContext.jsx";
+import './App.css'  
+
 
 function App() {
 

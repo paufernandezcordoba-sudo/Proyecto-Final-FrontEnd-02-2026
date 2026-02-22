@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #f0f2f5;
+}
+
+/* ... tus estilos normales arriba ... */
+
+/* --- AJUSTES RESPONSIVOS AL FINAL --- */
+
+/* Pantallas pequeñas (Móviles) */
+@media (max-width: 600px) {
+    .sidebar {
+        flex: 0 0 70px; /* Se achica el sidebar al mínimo */
+        min-width: 70px;
+    }
+    
+    .contact-info-text {
+        display: none; /* Escondemos el texto para que no se amontone */
+    }
+}
+
+/* Pantallas extra grandes (Monitores 2000px) */
+@media (min-width: 1440px) {
+    .app-container {
+        max-width: 1600px; /* Evita que el chat se estire infinitamente */
+        margin: 0 auto;    /* Lo centra en la pantalla */
+        height: 95vh;      /* Le da un aire arriba y abajo */
+        margin-top: 2.5vh;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+}

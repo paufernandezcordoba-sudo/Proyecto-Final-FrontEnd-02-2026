@@ -17,6 +17,7 @@
 /* ---- SIDEBAR ---- */
 .sidebar-container {
     width: 30%; /* Ocupa el 30% del ancho */
+    min-width: 260px; /* No se encoge más de esto para que sea legible */
     max-width: 400px;
     background-color: white;
     border-right: 1px solid #d1d7db;
@@ -24,11 +25,12 @@
     flex-direction: column;
 }
 
-/* ---- ÁREA DE CHAT ---- */
+/* Chat: Ocupa el resto del espacio disponible */
 .chat-container {
-    flex-grow: 1; /* Ocupa todo el resto del espacio disponible */
+    flex: 1; 
     display: flex;
     flex-direction: column;
+    background-color: #efeae2;
 }
 
 .chat-header {
@@ -57,11 +59,13 @@
 /* El área central donde van los mensajes */
 .chat-messages-area {
     flex-grow: 1;
-    overflow-y: auto; /* Si hay muchos mensajes, aparece el scroll */
+    overflow-y: auto;
     padding: 20px;
+    background-color: #efeae2; /* El color crema clásico */
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); /* Patrón de fondo opcional */
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Separación entre cada mensaje */
+    gap: 8px;
 }
 
 .chat-input-area {
@@ -69,7 +73,7 @@
     background-color: #f0f2f5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     /* En móviles, el Sidebar podría ocupar el 100% y el chat ocultarse, 
        o viceversa dependiendo de la ruta */
     .sidebar-container {
@@ -77,6 +81,6 @@
         display: block;
     }
     .chat-container {
-        display: none; /* Luego con lógica de React mostraremos uno u otro */
+        display: none; 
     }
 }

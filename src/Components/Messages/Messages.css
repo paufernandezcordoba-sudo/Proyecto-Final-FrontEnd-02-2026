@@ -2,6 +2,7 @@
 .message-row {
     display: flex;
     width: 100%;
+    margin-bottom: 4px;
 }
 
 /* Si es mi mensaje, empujamos la burbuja a la derecha */
@@ -14,13 +15,40 @@
     justify-content: flex-start;
 }
 
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: #f0f2f5;
+    border-bottom: 1px solid #d1d7db;
+}
+
+.chat-header h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111b21;
+    margin: 0;
+}
+
+.chat-header span {
+    font-size: 13px;
+    color: #667781;
+}
+
+.contact-texts {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
 /* Estilo general de la burbuja */
 .message-bubble {
-    max-width: 65%; /* Para que no ocupe toda la pantalla a lo ancho */
+    max-width: 65%;
     padding: 8px 12px;
     border-radius: 8px;
-    font-size: 14.5px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    font-size: 14px;
+    position: relative;
+    box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
 }
 
 /* Colores específicos según quién lo manda */
@@ -32,4 +60,36 @@
 .message-row.su-mensaje .message-bubble {
     background-color: #ffffff; /* Blanco */
     border-top-left-radius: 0; 
+}
+
+.message-text {
+    font-size: 14.2px;
+    line-height: 1.4; /* Espaciado entre líneas para mejor lectura */
+    color: #111b21;
+    margin: 0;
+}
+
+.message-time {
+    font-size: 10px;
+    color: #667781;
+    text-transform: uppercase; /* Opcional, WhatsApp usa minúsculas pero esto le da orden */
+}
+
+.check-mark-icon {
+    color: #53bdeb; /* Este es el celeste cian oficial de WhatsApp */
+    font-size: 18px; /* Un poquito más grande para que se luzca el icono de react-icons */
+    margin-left: 4px;
+    vertical-align: middle; /* Para que quede bien alineado con el texto de la hora */
+}
+
+@media (min-width: 1200px) {
+    .message-bubble {
+        max-width: 50%; /* En pantallas grandes, que la burbuja no cruce toda la pantalla */
+    }
+}
+
+@media (max-width: 480px) {
+    .message-bubble {
+        max-width: 85%; /* En móviles, aprovechamos más el ancho */
+    }
 }

@@ -1,34 +1,34 @@
 const contacts = [
     {
         id: 1,
-        name: 'Yoda',
+        name: 'Chuwaka',
         last_time_connection: 'Hace 2 horas',
-        profile_picture: 'https://images.immediate.co.uk/production/volatile/sites/3/2017/12/yoda-the-empire-strikes-back-28a7558.jpg?quality=90&webp=true&resize=800,534',
+        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/554319900_1466763377915507_5419813511984669955_n.jpg?ccb=11-4&oh=01_Q5Aa3wHVdT349xngaeZR-_kczjxkc2vYtprKyTdw5Mz3W-rSQQ&oe=69A73AD2&_nc_sid=5e03e0&_nc_cat=108',
         messages: [
             {
                 id: 1,
-                text: 'Hola, como estas?',
+                text: 'Hola Joaco, venís a almorzar?',
                 send_by_me: true, // true si el mensaje fue enviado por mi, false si el mensaje fue enviado por el contacto
                 created_at: '2024-06-01T12:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Bien yo estoy',
+                text: 'Hola, ma. Llego tarde de la facultad, no creo que alcance a llegar para el almuerzo',
                 send_by_me: false,
                 created_at: '2024-06-01T12:05:00Z',
                 is_read: false
             },
             {
                 id: 3,
-                text: 'Vamos de trekking?',
+                text: 'Oka, te dejo un plato en la heladera entonces',
                 send_by_me: true, // true si el mensaje fue enviado por mi, false si el mensaje fue enviado por el contacto
                 created_at: '2024-06-01T12:06:00Z',
                 is_read: true
             },
             {
                 id: 4,
-                text: 'No puedo, tengo que cuidar a mis hijos',
+                text: 'Dale, gracias! Después lavo los platos',
                 send_by_me: false,
                 created_at: '2024-06-01T12:07:00Z',
                 is_read: false
@@ -37,20 +37,20 @@ const contacts = [
     },
     {
         id: 2,
-        name: 'Pepe',
+        name: 'Marcela',
         last_time_connection: 'Hace 3 horas',
-        profile_picture: 'https://www.clarin.com/img/2022/01/20/GWR2-6fo__1256x620__1.jpg',
+        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/584285139_1362926308870772_6139413910314663675_n.jpg?ccb=11-4&oh=01_Q5Aa3wF2joNVXbeb6gQ1BgIMf7eLf-DqeOCE78P2GwnnX_AqeQ&oe=69A74687&_nc_sid=5e03e0&_nc_cat=105',
         messages: [
             {
                 id: 1,
-                text: 'Holaaa',
+                text: 'Holaaa. Pudiste ver los diseños que te mandé?',
                 send_by_me: true, // true si el mensaje fue enviado por mi, false si el mensaje fue enviado por el contacto
                 created_at: '2024-06-01T12:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Bien yo estoy',
+                text: 'Hola, no pude verlos todavía, estoy con mucho laburo. Te prometo que los veo esta noche',
                 send_by_me: false,
                 created_at: '2024-06-01T12:05:00Z',
                 is_read: false
@@ -65,28 +65,28 @@ const contacts = [
         messages: [
             {
                 id: 1,
-                text: 'Fijate en la línea 50 del código',
+                text: 'Vos sabés que no logro encontrar el error en el código?',
                 send_by_me: true, // true si el mensaje fue enviado por mi, false si el mensaje fue enviado por el contacto
                 created_at: '2024-06-01T12:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'OK, ya lo cambio',
+                text: 'Fijate en la línea 50 del código',
                 send_by_me: false,
                 created_at: '2024-06-01T12:05:00Z',
                 is_read: false
             },
             {
                 id: 3,
-                text: 'Vamos de trekking?',
+                text: 'Ahhhh, si si, ahí lo encontré, gracias!',
                 send_by_me: true, // true si el mensaje fue enviado por mi, false si el mensaje fue enviado por el contacto
                 created_at: '2024-06-01T12:06:00Z',
                 is_read: true
             },
             {
                 id: 4,
-                text: 'No puedo, tengo que cuidar a mis hijos',
+                text: 'Avisame si necesitás que te ayude con algo más',
                 send_by_me: false,
                 created_at: '2024-06-01T12:07:00Z',
                 is_read: false

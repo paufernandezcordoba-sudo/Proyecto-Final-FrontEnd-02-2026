@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { ContactsContext } from '../Context/ContactsContext'
+import { IoSend } from "react-icons/io5"; // Opcional: si quieres usar un icono de react-icons
 import './NewMessageForm.css'
 
 const NewMessageForm = ({ contact_id }) => {
@@ -9,7 +10,7 @@ const NewMessageForm = ({ contact_id }) => {
         event.preventDefault()
 
         const new_message = event.target.nuevo_mensaje.value
-/* usamos el trim para quitar espacios al principio y al final del mensaje, asi evitamos enviar mensajes vacios o con solo espacios */
+        
         if (new_message.trim() !== '') {
             addMessage(contact_id, new_message)
             event.target.nuevo_mensaje.value = ''
@@ -17,15 +18,20 @@ const NewMessageForm = ({ contact_id }) => {
     }
 
     return (
-        <form onSubmit={handleSubmitNewMessage}>
-            <label htmlFor='nuevo_mensaje'>Nuevo mensaje</label>
-            <textarea 
-                placeholder='Escribe un mensaje...' 
-                id='nuevo_mensaje' 
-                name='nuevo_mensaje'
-                className="message-input" 
-            />
-            <button type='submit'>Enviar</button>
+        <form className="message-form" onSubmit={handleSubmitNewMessage}>
+            <div className="input-container">
+                <textarea 
+                    placeholder='Escribe un mensaje...' 
+                    id='nuevo_mensaje' 
+                    name='nuevo_mensaje'
+                    className="message-input"
+                    rows="1" // Importante para que no sea muy alto al inicio
+                />
+            </div>
+            
+            <button type='submit' className="send-button">
+                <IoSend /> {/* O simplemente el símbolo ➤ si no instalaste el icono */}
+            </button>
         </form>
     )
 }

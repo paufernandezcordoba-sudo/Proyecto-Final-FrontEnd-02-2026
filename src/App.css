@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #f0f2f5;
+}
+
+/* ... tus estilos normales arriba ... */
+
+/* --- AJUSTES RESPONSIVOS AL FINAL --- */
+
+/* Pantallas pequeñas (Móviles) */
+@media (max-width: 600px) {
+    .sidebar {
+        flex: 0 0 70px; /* Se achica el sidebar al mínimo */
+        min-width: 70px;
+    }
+    
+    .contact-info-text {
+        display: none; /* Escondemos el texto para que no se amontone */
+    }
+}
