@@ -5,18 +5,54 @@ body {
     background-color: #f0f2f5;
 }
 
-/* ... tus estilos normales arriba ... */
+.app-main-layout {
+    display: flex;         /* sidebar al lado del chat */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;      /* Evita scroll doble */
+}
 
-/* --- AJUSTES RESPONSIVOS AL FINAL --- */
+.sidebar-wrapper {
+    width: 30%;            /* Ancho del sidebar */
+    min-width: 320px;
+    max-width: 350px;
+    border-right: 1px solid #d1d7db;
+    height: 100%;
+}
 
-/* Pantallas pequeñas (Móviles) */
-@media (max-width: 600px) {
-    .sidebar {
-        flex: 0 0 70px; /* Se achica el sidebar al mínimo */
-        min-width: 70px;
+.content-wrapper {
+    flex-grow: 1;          /* chat ocupe todo el resto del espacio */
+    height: 100%;
+    background-color: #f0f2f5;
+}
+
+/* -- AJUSTES RESPONSIVOS CORREGIDOS -- */
+
+@media (max-width: 768px) {
+    /* 1. Quitamos los límites de ancho para que no se rompa el diseño */
+    .sidebar-wrapper, 
+    .content-wrapper {
+        min-width: none !important; 
+        width: 100% !important;
+        max-width: 100% !important;
     }
-    
-    .contact-info-text {
-        display: none; /* Escondemos el texto para que no se amontone */
+
+    /* 2. Por defecto: Solo mostramos Sidebar (Lista de contactos) */
+    .content-wrapper {
+        display: none; 
+    }
+    .sidebar-wrapper {
+        display: block;
+    }
+
+    /* 3. Cuando el Chat está abierto (Gracias a la clase de App.jsx) */
+    .app-main-layout.chat-is-open .sidebar-wrapper {
+        display: none; /* Escondemos la lista */
+    }
+
+    .app-main-layout.chat-is-open .content-wrapper {
+        display: flex; /* Mostramos el chat */
+        flex-direction: column;
+        height: 100vh;
     }
 }

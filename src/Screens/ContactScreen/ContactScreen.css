@@ -25,12 +25,14 @@
     flex-direction: column;
 }
 
-/* Chat: Ocupa el resto del espacio disponible */
+
 .chat-container {
-    flex: 1; 
+
     display: flex;
-    flex-direction: column;
-    background-color: #efeae2;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    height: 100vh;          /* Ocupa toda la altura de la pantalla */
+    width: 100%;
+    overflow: hidden;       /* Importante: el contenedor padre NO debe scrollear */
 }
 
 .chat-header {
@@ -45,7 +47,7 @@
 .contact-info {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 /* FOTOS REDONDAS */
@@ -66,11 +68,15 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    -webkit-overflow-scrolling: touch; 
 }
 
 .chat-input-area {
-    padding: 10px 20px;
-    background-color: #f0f2f5;
+    flex-shrink: 0;
+    background-color: #f0f2f5; /* Color gris claro de la barra de escritura */
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;    /* Asegura que el padding no rompa el ancho */
 }
 
 @media (max-width: 500px) {

@@ -1,0 +1,42 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f0f2f5; /* El gris claro de fondo */
+    text-align: center;
+    padding: 20px;
+}
+
+.welcome-content {
+    max-width: 450px;
+}
+
+.welcome-img {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.welcome-content h1 {
+    font-size: 32px;
+    font-weight: 300;
+    color: #41525d;
+    margin-bottom: 15px;
+}
+
+.welcome-content p {
+    font-size: 14px;
+    color: #667781;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+.download-btn {
+    background-color: #008069;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
