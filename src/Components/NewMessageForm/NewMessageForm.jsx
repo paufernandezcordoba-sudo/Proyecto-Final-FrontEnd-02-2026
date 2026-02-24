@@ -30,7 +30,7 @@ const NewMessageForm = ({ contact_id }) => {
             </div>
             
             <button type='submit' className="send-button">
-                <IoSend /> {/* O simplemente el símbolo ➤ si no instalaste el icono */}
+                <IoSend /> 
             </button>
         </form>
     )

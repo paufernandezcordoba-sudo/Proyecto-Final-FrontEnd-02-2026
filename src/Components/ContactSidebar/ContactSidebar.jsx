@@ -12,9 +12,12 @@ export default function ContactSidebar() {
             <header className="sidebar-header">
                 <div className="user-profile">
                     <img src="https://media.licdn.com/dms/image/v2/D4D03AQG-I4ZDlhvqrw/profile-displayphoto-crop_800_800/B4DZwf_6TOJQAI-/0/1770063377562?e=1773273600&v=beta&t=fYPJKiG1Q7xVF9flxJAoW7x48baUl73k7d0Sdnt8q5E" alt="Yo" className="contact-avatar" />
-                    <h2>Pau</h2>
+                    <div className="user-profile-info">
+                        <h2>Pau</h2>
+                        <p className="favorite-text">Ganan los que se atreven{favorite_name}</p>
+                    </div>
                 </div>
-                <p className="favorite-text">Sonreir: {favorite_name}</p>
+
             </header>
 
             <div className="contacts-list">
@@ -38,8 +41,8 @@ export default function ContactSidebar() {
                                         <span className="contact-date">{contact.last_time_connection}</span>
                                     </div>
                                     <p className="last-message-preview">
-                                        {/* Aquí iría el último mensaje o descripción */}
-                                        {contact.status || "Foto"}
+                                        {/* Aquí iría el último mensaje o DESCRIPCION ACTIVIDAD */}
+                                        {contact.status || "Sin estado"}
                                     </p>
                                 </div>
                             </Link>

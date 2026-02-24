@@ -36,7 +36,7 @@ const ContactsContextProvider = ({ children }) => {
 
     const provider_values = {
         contactsState,
-        favorite_name: 'Siempre',
+        favorite_name: '',
         addMessage //Esto permite que exportemos la función aquí
     }
 

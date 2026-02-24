@@ -2,7 +2,8 @@ const contacts = [
     {
         id: 1,
         name: 'Chuwaka',
-        last_time_connection: 'Hace 2 horas',
+        status: "Uuuur Aaaargggghhhhh",
+        last_time_connection: '12:25 PM',
         profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/554319900_1466763377915507_5419813511984669955_n.jpg?ccb=11-4&oh=01_Q5Aa3wHVdT349xngaeZR-_kczjxkc2vYtprKyTdw5Mz3W-rSQQ&oe=69A73AD2&_nc_sid=5e03e0&_nc_cat=108',
         messages: [
             {
@@ -38,6 +39,7 @@ const contacts = [
     {
         id: 2,
         name: 'Marcela',
+        status: "En la playa",
         last_time_connection: 'Hace 3 horas',
         profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/584285139_1362926308870772_6139413910314663675_n.jpg?ccb=11-4&oh=01_Q5Aa3wF2joNVXbeb6gQ1BgIMf7eLf-DqeOCE78P2GwnnX_AqeQ&oe=69A74687&_nc_sid=5e03e0&_nc_cat=105',
         messages: [
@@ -60,7 +62,8 @@ const contacts = [
     {
         id: 3,
         name: 'Martín',
-        last_time_connection: 'Hace 2 horas',
+        status: "Ocupado - meet",
+        last_time_connection: '3:45 PM',
         profile_picture: 'https://media.licdn.com/dms/image/v2/D4D03AQFn-dTV0DaG9w/profile-displayphoto-scale_200_200/B4DZxIdJ1uHAAY-/0/1770742133898?e=1773273600&v=beta&t=5CDCpDrtsY8ib2yHvQY8_np6Y5zAbYZiCR0WcSyoqpo',
         messages: [
             {

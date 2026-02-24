@@ -7,35 +7,37 @@
     transition: background-color 0.2s;
     text-decoration: none;
     color: inherit;
+    font-size: 12px;
 }
 
 .contact-item:hover {
     background-color: #f5f6f6;
 }
 
-/* CORREGIMOS LAS IMÁGENES GIGANTES grandes */
+/* CORREGIMOS LAS IMÁGENES GIGANTES */
 .contact-avatar {
     width: 49px;
     height: 49px;
-    border-radius: 50%; /* Foto circular como en el ejemplo */
+    border-radius: 50%; /* FOTO circular */
     object-fit: cover;
     margin-right: 15px;
 }
 
 .contact-info-text h3 {
     font-size: 14px;
-    font-weight: 500; /* Peso medio para el nombre */
-    color: #111b21;   /* Casi negro */
+    font-weight: 500; /* Peso medio para el NOMBRE, ni negro ni gris clarito */
+    color: #111b21;  
     margin: 0;
 }
 
+/* DESCRIPCION */
 .contact-info-text p {
-    font-size: 14px;
-    color: #667781;   /* Gris de estado */
+    font-size: 12px;
+    color: #667781;   /* Gris de ESTADO*/
     margin-top: 2px;
 }
 
-/* La lista de contactos debe tener scroll si son muchos */
+/* scroll si son muchos */
 .contacts-list {
     flex-grow: 1;
     overflow-y: auto;
@@ -58,7 +60,7 @@
     flex-direction: column;
     height: 100%;
 }
-
+/* MI profile */
 .sidebar-header {
     background-color: #f0f2f5;
     padding: 10px 16px;
@@ -79,16 +81,17 @@
 
 .user-profile h2 {
     font-size: 16px;
+    margin: 0px;
 }
 
 .favorite-text {
-    font-size: 12px;
+    font-size: 13px;
     color: #667781;
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 /* Para pantallas móviles (320px a 600px) */
-@media (max-width: 600px) {
+@media (max-width: 320px) {
     .sidebar {
         flex: 1; /* En móvil, si no hay chat abierto, el sidebar ocupa todo */
         min-width: 320px;

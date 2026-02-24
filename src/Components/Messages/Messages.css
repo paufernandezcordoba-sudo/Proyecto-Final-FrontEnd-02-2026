@@ -72,12 +72,12 @@
 .message-time {
     font-size: 10px;
     color: #667781;
-    text-transform: uppercase; /* Opcional, WhatsApp usa minúsculas pero esto le da orden */
+    text-transform: uppercase; 
 }
 
 .check-mark-icon {
-    color: #53bdeb; /* Este es el celeste cian oficial de WhatsApp */
-    font-size: 18px; /* Un poquito más grande para que se luzca el icono de react-icons */
+    color: #53bdeb; 
+    font-size: 18px; 
     margin-left: 4px;
     vertical-align: middle; /* Para que quede bien alineado con el texto de la hora */
 }
