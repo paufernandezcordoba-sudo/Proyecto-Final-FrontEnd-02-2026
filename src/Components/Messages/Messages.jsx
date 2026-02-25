@@ -7,24 +7,26 @@ export default function Messages({ contact_selected }) {
         <div className="messages-container">
             {
                 contact_selected.messages.map(message => { 
-                    // Definimos si el mensaje es mío o del contacto
+                    
                     const isMe = message.send_by_me;
+                    
                     return (
-                        <div 
-                            key={message.id} 
+                        <div
+                            key={message.id}
                             className={`message-row ${isMe ? 'mi-mensaje' : 'su-mensaje'}`}
                         >
                             <div className="message-bubble">
                                 <p className="message-text">{message.text}</p>
-                                <span className="message-time">
-                                    {message.time}
+                                
+                                <div className="message-info">
+                                    <span className="message-time">{message.time || "3:45 PM"}</span>
                                     {isMe && <IoCheckmarkDone className="check-mark-icon" />}
-                                </span>
+                                </div>
                             </div>
                         </div>
                     )
                 })
-            }   
+            }
         </div>
     )
 }

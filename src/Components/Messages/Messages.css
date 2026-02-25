@@ -15,6 +15,18 @@
     justify-content: flex-start;
 }
 
+/* Contenedor para hora y checks */
+.message-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    margin-top: -4px; /* Sube un poquito para acercarse al texto */
+    margin-bottom: -4px;
+    float: right; /* Truco clásico para que el texto lo rodee si es corto */
+    padding-left: 10px; /* Espacio entre el texto y la hora */
+}
+
 .chat-header {
     display: flex;
     align-items: center;
@@ -53,8 +65,8 @@
 
 /* Colores específicos según quién lo manda */
 .message-row.mi-mensaje .message-bubble {
-    background-color: #d9fdd3; /* Verde clarito estilo WhatsApp */
-    border-top-right-radius: 0; /* Detalle estético de la esquinita */
+    background-color: #d9fdd3; 
+    border-top-right-radius: 0; 
 }
 
 .message-row.su-mensaje .message-bubble {
@@ -67,11 +79,14 @@
     line-height: 1.4; /* Espaciado entre líneas para mejor lectura */
     color: #111b21;
     margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .message-time {
-    font-size: 10px;
+    font-size: 11px;
     color: #667781;
+    white-space: nowrap;
     text-transform: uppercase; 
 }
 
@@ -88,7 +103,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 320px) {
     .message-bubble {
         max-width: 85%; /* En móviles, aprovechamos más el ancho */
     }

@@ -79,7 +79,28 @@
     box-sizing: border-box;    /* Asegura que el padding no rompa el ancho */
 }
 
-@media (max-width: 500px) {
+.back-button {
+    display: none; /* Oculto por defecto en PC */
+    font-size: 24px;
+    color: #667781;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    align-items: center;
+}
+/*MOBILE */
+/* Solo aparece cuando estamos en modo móvil */
+@media (max-width: 768px) {
+    .back-button {
+        display: flex; /* Se vuelve visible en celulares */
+    }
+    
+    .chat-header {
+        padding-left: 10px; /* Ajustamos el padding para la flecha */
+    }
+}
+
+@media (max-width: 320px) {
     /* En móviles, el Sidebar podría ocupar el 100% y el chat ocultarse, 
        o viceversa dependiendo de la ruta */
     .sidebar-container {

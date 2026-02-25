@@ -1,58 +1,163 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    background-color: #f0f2f5;
+/* --- VARIABLES Y RESET --- */
+:root {
+    --whatsapp-green: #00a884;
+    --bg-gray: #f0f2f5;
+    --border-color: #d1d7db;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- LAYOUT PRINCIPAL (Desktop) --- */
 .app-main-layout {
-    display: flex;         /* sidebar al lado del chat */
-    width: 100vw;
+    display: flex;
+    width: 100%;
     height: 100vh;
-    overflow: hidden;      /* Evita scroll doble */
+    background-color: var(--bg-gray);
+    overflow: hidden; /* Evita scrolls raros en el body */
 }
 
 .sidebar-wrapper {
-    width: 30%;            /* Ancho del sidebar */
-    min-width: 320px;
-    max-width: 350px;
-    border-right: 1px solid #d1d7db;
-    height: 100%;
+    width: 30%;
+    min-width: 350px;
+    max-width: 450px;
+    background-color: #ffffff;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .content-wrapper {
-    flex-grow: 1;          /* chat ocupe todo el resto del espacio */
-    height: 100%;
-    background-color: #f0f2f5;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #efeae2; /* Color de fondo típico de chat */
 }
 
-/* -- AJUSTES RESPONSIVOS CORREGIDOS -- */
+/* --- ESTILOS DE CONTACTOS (Coherentes con tu JSX) --- */
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #f0f2f5;
+    transition: background-color 0.2s;
+}
 
+.contact-item:hover {
+    background-color: #f5f6f6;
+}
+
+.contact-avatar {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Impide que la foto se aplaste */
+}
+
+.contact-info-text {
+    flex: 1; /* 👈 LLENA EL ESPACIO VACÍO */
+    min-width: 0; /* 👈 PERMITE QUE EL TEXTO SE CORTE CON ... */
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+}
+
+.contact-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info-text h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111b21;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact-date {
+    font-size: 11px;
+    color: #667781;
+}
+
+.last-message-preview {
+    font-size: 13px;
+    color: #667781;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+/* --- RESPONSIVE: TABLETS --- */
+@media (max-width: 1024px) {
+    .sidebar-wrapper {
+        width: 40%;
+        min-width: 320px;
+    }
+}
+
+/* --- RESPONSIVE: MÓVILES (768px y menor) --- */
 @media (max-width: 768px) {
-    /* 1. Quitamos los límites de ancho para que no se rompa el diseño */
-    .sidebar-wrapper, 
-    .content-wrapper {
-        min-width: none !important; 
+    .app-main-layout {
+        /* Mantenemos flex pero ocultamos uno u otro según la clase chat-is-open */
+        flex-direction: row; 
+    }
+
+    .sidebar-wrapper, .content-wrapper {
         width: 100% !important;
+        min-width: 100% !important;
         max-width: 100% !important;
     }
 
-    /* 2. Por defecto: Solo mostramos Sidebar (Lista de contactos) */
-    .content-wrapper {
-        display: none; 
-    }
-    .sidebar-wrapper {
-        display: block;
-    }
-
-    /* 3. Cuando el Chat está abierto (Gracias a la clase de App.jsx) */
+    /* Si el chat está abierto, escondemos la lista */
     .app-main-layout.chat-is-open .sidebar-wrapper {
-        display: none; /* Escondemos la lista */
+        display: none !important;
     }
 
-    .app-main-layout.chat-is-open .content-wrapper {
-        display: flex; /* Mostramos el chat */
-        flex-direction: column;
+    /* Si el chat está CERRADO, escondemos el área de mensajes */
+    .app-main-layout:not(.chat-is-open) .content-wrapper {
+        display: none !important;
+    }
+}
+
+/* --- EXTREMO: PANTALLAS PEQUEÑAS (320px) --- */
+@media (max-width: 320px) {
+    .contact-avatar {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .contact-info-text h3 {
+        font-size: 13px;
+    }
+
+    .contact-date {
+        font-size: 10px;
+    }
+}
+
+/* --- PANTALLAS GIGANTES --- */
+@media (min-width: 1441px) {
+    body {
+        background-color: #dadbd3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100vh;
+    }
+
+    .app-main-layout {
+        width: 1400px;
+        height: 95vh;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
     }
 }

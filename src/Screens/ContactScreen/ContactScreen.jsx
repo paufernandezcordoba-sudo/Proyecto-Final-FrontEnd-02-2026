@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import { useParams } from 'react-router'; 
-import { ContactsContext } from "../../Components/Context/ContactsContext.jsx";
-import NewMessageForm from '../../Components/NewMessageForm/NewMessageForm.jsx';
-import Messages from '../../Components/Messages/Messages.jsx';
-import './ContactScreen.css';
+import { ContactsContext } from '../../Components/Context/ContactsContext';
+import { Link, useParams } from 'react-router-dom';
+import { IoArrowBack, IoCheckmarkDone } from "react-icons/io5";
 import { CiMenuKebab } from "react-icons/ci";
+import Messages from '../../Components/Messages/Messages';
+import NewMessageForm from '../../Components/NewMessageForm/NewMessageForm';
+import './ContactScreen.css';
 
 export default function ContactScreen() {
   const { contactsState } = useContext(ContactsContext);
@@ -13,18 +14,26 @@ export default function ContactScreen() {
   const contact_selected = contactsState?.find(contact => Number(contact.id) === Number(contact_id));
 
   return (
-    <div className="chat-container">
+    /* clase 'chat-is-open' cuando hay un contacto */
+    <div className={`chat-container ${contact_selected ? 'chat-is-open' : ''}`}>
+      
       {!contact_selected ? (
         <div className="error-container">
           <h1>El contacto seleccionado no existe</h1>
         </div>
       ) : (
         <>
-          {/* Cabecera del chat */}
+
           <header className="chat-header">
             <div className="contact-info">
+              
+              {/* Link con la flecha de volver */}
+              <Link to="/" className="back-button">
+                <IoArrowBack />
+              </Link>
+
               <img
-                src={contact_selected?.profile_picture || "https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/171823996_1983580125153730_6122969410347502475_n.jpg?ccb=11-4&oh=01_Q5Aa3wFwbstMyhnViCfOcW4c0bBUUH0XVBdZOSpHbJWmQMB20Q&oe=69AA5326&_nc_sid=5e03e0&_nc_cat=111"}
+                src={contact_selected?.profile_picture || "https://media-eze1-1.cdn.whatsapp.net/v/t61..."}
                 alt="avatar"
                 className="avatar"
               />
@@ -36,12 +45,10 @@ export default function ContactScreen() {
             <button className="btn-salir"><CiMenuKebab /></button>
           </header>
 
-          {/* Área de mensajes */}
           <main className="chat-messages-area">
             <Messages contact_selected={contact_selected} />
           </main>
 
-          {/* Formulario de entrada */}
           <footer className="chat-input-area">
             <NewMessageForm contact_id={contact_id} />
           </footer>
