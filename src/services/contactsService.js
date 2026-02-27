@@ -2,7 +2,7 @@
 Simular la interaccion con un servidor
 */
 
-import contacts from "../data/contactData";
+import { contacts } from '/src/data/contactData.js';
 
 
 export function getContacts () {

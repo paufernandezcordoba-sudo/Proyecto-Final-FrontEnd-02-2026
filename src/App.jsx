@@ -4,7 +4,7 @@ import HomeScreen from './Screens/HomeScreen/HomeScreen'
 import ContactScreen from './Screens/ContactScreen/ContactScreen'
 import ErrorNotFoundScreen from './Screens/ErrorNotFoundScreen/ErrorNotFoundScreen'
 import { getContacts } from './services/contactsService'
-import ContactsContextProvider from "./Components/Context/ContactsContext.jsx";
+import { ContactsContextProvider } from "./Components/Context/ContactsContext.jsx";
 import ContactSidebar from './Components/ContactSidebar/ContactSidebar'
 import './App.css'
 import { useLocation } from 'react-router'

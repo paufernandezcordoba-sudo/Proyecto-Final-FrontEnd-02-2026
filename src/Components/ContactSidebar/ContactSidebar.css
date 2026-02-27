@@ -24,18 +24,35 @@
     margin-right: 15px;
 }
 
+.contact-info-text {
+    flex: 1;            /* Obliga a la caja a estirarse hacia la derecha */
+    min-width: 0;       /* Permite que el texto se encoja sin desaparecer */
+    display: flex;      /* Organiza el h3 y el p */
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 12px;
+    overflow: hidden;   /* Evita que el texto largo empuje el diseño */
+}
+
 .contact-info-text h3 {
-    font-size: 14px;
-    font-weight: 500; /* Peso medio para el NOMBRE, ni negro ni gris clarito */
+    font-size: 16px;
+    font-weight: 600; /* Peso medio para el NOMBRE, ni negro ni gris clarito */
     color: #111b21;  
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* DESCRIPCION */
 .contact-info-text p {
-    font-size: 12px;
-    color: #667781;   /* Gris de ESTADO*/
+    font-size: 14px;
+    font-weight: 400;
+    color: #747a7e;   /* Gris de ESTADO*/
     margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* scroll si son muchos */
@@ -61,17 +78,87 @@
     flex-direction: column;
     height: 100%;
 }
-/* MI profile */
+/* Sector logo Whatsapp arriba de lista de contactos y buscadores */
 .sidebar-header {
-    background-color: #f0f2f5;
-    padding: 10px 16px;
-    border-bottom: 1px solid #d1d7db;
+    background-color: #ffffff; 
+    padding: 15px 16px 10px 16px;
+    border-bottom: 1px solid #f0f2f5;
 }
 
 .sidebar-header h2 {
     font-size: 16px;
     font-weight: 700;
     color: #111b21;
+}
+
+.header-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.whatsapp-title {
+    color: #1fa855;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+    color: #54656f;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* BUSCADOR */
+.search-input-wrapper {
+    background-color: #f0f2f5;
+    border-radius: 20px;
+    border: 2px solid #1fa855;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    height: 35px;
+}
+
+.search-icon {
+    font-size: 14px;
+    color: #54656f;
+    margin-right: 15px;
+}
+
+.search-input-wrapper input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+}
+
+/* FILTROS (Pills) */
+.filters-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.filter-pill {
+    background-color: #f0f2f5;
+    border: 1px solid #6d6e6f;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #6d6e6f;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-pill.active {
+    background-color: #e7fce3;
+    color: #6d6e6f;
+    font-weight: 600;
 }
 
 .user-profile {

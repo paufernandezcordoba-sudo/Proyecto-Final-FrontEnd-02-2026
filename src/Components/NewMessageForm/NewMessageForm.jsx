@@ -7,13 +7,14 @@ const NewMessageForm = ({ contact_id }) => {
     const { addMessage } = useContext(ContactsContext)
 
     function handleSubmitNewMessage(event) {
-        event.preventDefault()
+        event.preventDefault();
 
-        const new_message = event.target.nuevo_mensaje.value
+        const data = new FormData(event.target);
+        const new_message = data.get('nuevo_mensaje');
         
-        if (new_message.trim() !== '') {
-            addMessage(contact_id, new_message)
-            event.target.nuevo_mensaje.value = ''
+        if (new_message && new_message.trim() !== '') {
+            addMessage(contact_id, new_message);
+            event.target.nuevo_mensaje.value = '';
         }
     }
 

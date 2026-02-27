@@ -42,6 +42,7 @@
     padding: 10px 20px;
     background-color: #f0f2f5; /* Gris clarito de WhatsApp */
     border-bottom: 1px solid #d1d7db;
+    font-size: 20px;
 }
 
 .contact-info {
@@ -60,11 +61,14 @@
 
 /* El área central donde van los mensajes */
 .chat-messages-area {
-    flex-grow: 1;
+   flex-grow: 1;
     overflow-y: auto;
     padding: 20px;
-    background-color: #efeae2; /* El color crema clásico */
-    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); /* Patrón de fondo opcional */
+    background-color: #efeae2; /* Fondo crema */
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    background-repeat: repeat;
+    background-size: 400px;
+    background-blend-mode: multiply;
     display: flex;
     flex-direction: column;
     gap: 8px;

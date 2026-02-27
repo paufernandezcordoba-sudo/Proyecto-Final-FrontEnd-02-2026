@@ -6,7 +6,7 @@ export const ContactsContext = createContext({
     addMessage: () => {}
 });
 
-const ContactsContextProvider = ({ children }) => {
+export const ContactsContextProvider = ({ children }) => {
     const [contactsState, setContactsState] = useState(getContacts());
 
     const addMessage = (contactId, text) => {
@@ -32,5 +32,3 @@ const ContactsContextProvider = ({ children }) => {
         </ContactsContext.Provider>
     );
 };
-
-export default ContactsContextProvider;

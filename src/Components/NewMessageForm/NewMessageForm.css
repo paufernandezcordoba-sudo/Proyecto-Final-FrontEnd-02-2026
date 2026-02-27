@@ -1,51 +1,56 @@
-/* Contenedor gris de fondo donde va el input */
+
 .message-form {
     display: flex;
-    align-items: center;
-    background-color: #f0f2f5; /* Gris claro de WhatsApp */
+    align-items: flex-end; /* Alinea el botón con la base del texto */
     padding: 10px 15px;
+    background-color: #f0f2f5; /* Color de fondo de la barra de WhatsApp */
     gap: 10px;
+    border-top: 1px solid #d1d7db;
+    position: sticky; /* Se asegura de quedarse abajo si el padre es flex */
+    bottom: 0;
+    width: 100%;
 }
 
-/* Contenedor blanco para el textarea */
+
 .input-container {
-    flex-grow: 1;
-    background-color: white;
-    border-radius: 20px; /* Redondeado total */
-    padding: 5px 15px;
-    display: flex;
-    align-items: center;
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 5px 10px;
 }
 
-/* El textarea sin bordes y sin posibilidad de agrandarlo manualmente */
 .message-input {
     width: 100%;
     border: none;
     outline: none;
+    resize: none; /* Evita que el usuario lo deforme manualmente */
     font-size: 15px;
     font-family: inherit;
-    resize: none; /* Evita que el usuario lo deforme */
-    padding: 5px 0;
-    max-height: 100px;
+    padding: 5px;
+    background: transparent;
+    max-height: 120px; /* Para que no crezca infinito */
+    display: block;
 }
 
-/* El botón circular verde */
 .send-button {
-    background-color: #00a884; /* Verde oficial */
-    color: white;
+    background: none;
     border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    color: #54656f; /* Color gris de iconos de WhatsApp */
+    font-size: 24px;
     cursor: pointer;
-    font-size: 18px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    transition: background-color 0.2s;
-    padding-left: 3px; /* Pequeño ajuste visual para el ícono de flecha */
+    justify-content: center;
+    padding-bottom: 5px; /* Ajuste fino para centrar con el input */
 }
 
 .send-button:hover {
-    background-color: #008f72;
+    color: #1fa855; /* Cambia a verde al pasar el mouse */
+}
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el rebote de scroll en todo el cuerpo */
 }

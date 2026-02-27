@@ -16,7 +16,7 @@ export default function ContactScreen() {
   return (
     /* clase 'chat-is-open' cuando hay un contacto */
     <div className={`chat-container ${contact_selected ? 'chat-is-open' : ''}`}>
-      
+
       {!contact_selected ? (
         <div className="error-container">
           <h1>El contacto seleccionado no existe</h1>
@@ -26,12 +26,14 @@ export default function ContactScreen() {
 
           <header className="chat-header">
             <div className="contact-info">
-              
+
               {/* Link con la flecha de volver */}
               <Link to="/" className="back-button">
                 <IoArrowBack />
               </Link>
-
+              <div>
+                <span className="icon"><CiMenuKebab /></span>
+              </div>
               <img
                 src={contact_selected?.profile_picture || "https://media-eze1-1.cdn.whatsapp.net/v/t61..."}
                 alt="avatar"
@@ -42,7 +44,7 @@ export default function ContactScreen() {
                 <span>{contact_selected.last_time_connection || "Conectado recientemente"}</span>
               </div>
             </div>
-            <button className="btn-salir"><CiMenuKebab /></button>
+
           </header>
 
           <main className="chat-messages-area">
