@@ -54,3 +54,23 @@ html, body, #root {
     padding: 0;
     overflow: hidden; /* Evita el rebote de scroll en todo el cuerpo */
 }
+
+@media (max-width: 768px) {
+    /* Forzamos al contenedor principal del chat (el que envuelve a este form) 
+       a medir exactamente lo que mide la pantalla visible */
+    .content-wrapper { 
+        height: 100dvh !important; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    .message-form {
+        /* En mobile, cambiamos sticky por algo más seguro si es necesario */
+        position: relative; 
+        bottom: 0;
+        /* Evita que el teclado del celu tape el input en algunos navegadores */
+        padding-bottom: 12px; 
+        border-radius: 0;
+    }
+}
+

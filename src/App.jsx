@@ -17,7 +17,7 @@ function App() {
     return (
         <ContactsContextProvider>
 
-            <div className={`app-main-layout ${isChatOpen ? 'chat-is-open' : ''}`}>
+           <div className={`app-main-layout ${isChatOpen ? 'chat-is-open' : ''}`}>
 
                 <aside className="sidebar-wrapper">
                     <ContactSidebar />

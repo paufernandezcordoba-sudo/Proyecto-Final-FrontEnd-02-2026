@@ -1,14 +1,28 @@
+/* Contenedor interno para manejar el scroll */
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+/* scroll si son muchos */
+.contacts-list {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #ffffff;
+}
+
+/* --- ESTILOS DE CONTACTOS */
 .contact-item {
     display: flex;
     align-items: center;
     padding: 12px 16px;
-    cursor: pointer;
-    border-bottom: 1px solid #f0f2f5;
-    transition: background-color 0.2s;
-    text-decoration: none;
-    color: inherit;
-    font-size: 12px;
     width: 100%;
+    /* Asegura que ocupe todo el ancho */
+    text-decoration: none;
+    color: #111b21;
+    /* Color gris oscuro de WhatsApp */
 }
 
 .contact-item:hover {
@@ -19,25 +33,27 @@
 .contact-avatar {
     width: 49px;
     height: 49px;
-    border-radius: 50%; /* FOTO circular */
+    border-radius: 50%;
+    /* FOTO circular */
     object-fit: cover;
     margin-right: 15px;
 }
 
 .contact-info-text {
-    flex: 1;            /* Obliga a la caja a estirarse hacia la derecha */
-    min-width: 0;       /* Permite que el texto se encoja sin desaparecer */
-    display: flex;      /* Organiza el h3 y el p */
+    flex: 1;
+    /* Esto es vital: obliga al texto a ocupar el espacio sobrante */
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     margin-left: 12px;
-    overflow: hidden;   /* Evita que el texto largo empuje el diseño */
+    min-width: 0;
+    /* Evita que el texto largo empuje hacia afuera */
 }
 
 .contact-info-text h3 {
     font-size: 16px;
-    font-weight: 600; /* Peso medio para el NOMBRE, ni negro ni gris clarito */
-    color: #111b21;  
+    font-weight: 600;
+    /* Peso medio para el NOMBRE, ni negro ni gris clarito */
+    color: #111b21;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
@@ -48,39 +64,51 @@
 .contact-info-text p {
     font-size: 14px;
     font-weight: 400;
-    color: #747a7e;   /* Gris de ESTADO*/
+    color: #747a7e;
+    /* Gris de ESTADO*/
     margin-top: 2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* scroll si son muchos */
-.contacts-list {
-    flex-grow: 1;
-    overflow-y: auto;
-    background-color: #fff;
-}
-
-.sidebar-container {
-    width: 30%;
-    min-width: 300px;
-    max-width: 450px;
-    background-color: #ffffff;
-    border-right: 1px solid #d1d7db;
+.contact-header-row {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
 }
 
-/* Contenedor interno para manejar el scroll */
+.contact-header-row h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111b21;
+    margin: 0;
+}
+
+.contact-item.active-chat {
+    background-color: #ebebeb;
+}
+
+.contact-item.selected {
+    background-color: #f0f2f5 !important; /* El gris claro de WhatsApp */
+}
+
 .sidebar-content {
+    width: 100%;
+    max-width: 100vw;
+    /* Evita que sea más ancho que la pantalla */
+    overflow-x: hidden;
+    /* Corta cualquier intento de scroll lateral */
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
 }
+
+
 /* Sector logo Whatsapp arriba de lista de contactos y buscadores */
 .sidebar-header {
-    background-color: #ffffff; 
+    background-color: #ffffff;
     padding: 15px 16px 10px 16px;
     border-bottom: 1px solid #f0f2f5;
 }
@@ -179,15 +207,95 @@
 }
 
 .info-container {
-    overflow: hidden; 
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
+.contact-date {
+    font-size: 12px;
+    color: #667781;
+}
+
+.last-message-preview {
+    font-size: 14px;
+    color: #667781;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Agrega los puntos suspensivos ... */
+}
+
+@media (max-width: 768px) {
+    /* 1. Forzamos a que el contenedor de texto ocupe espacio */
+    .contact-info-text {
+        display: flex !important;   /* Que no se oculte */
+        flex: 1 !important;         /* Que use todo el ancho disponible al lado de la foto */
+        min-width: 0 !important;    /* Permite que el texto se ajuste sin desbordar */
+    }
+
+    /* 2. Aseguramos que el nombre (h3) sea visible */
+    .contact-info-text h3 {
+        display: block !important;
+        color: #111b21 !important;  /* Color oscuro para que se vea bien */
+        font-size: 15px !important; 
+    }
+
+    /* 3. Evitamos que la foto "aplace" al texto */
+    .contact-avatar {
+        flex-shrink: 0 !important;  /* La foto mantiene su tamaño y no pisa al nombre */
+    }
+
+    /* 4. Mantenemos el gris de selección en móvil */
+    .contact-item.selected {
+        background-color: #f0f2f5 !important;
+    }
+}@media (max-width: 768px) {
+    /* 1. Forzamos a que el contenedor de texto ocupe espacio */
+    .contact-info-text {
+        display: flex !important;   /* Que no se oculte */
+        flex: 1 !important;         /* Que use todo el ancho disponible al lado de la foto */
+        min-width: 0 !important;    /* Permite que el texto se ajuste sin desbordar */
+    }
+
+    /* 2. Aseguramos que el nombre (h3) sea visible */
+    .contact-info-text h3 {
+        display: block !important;
+        color: #111b21 !important;  /* Color oscuro para que se vea bien */
+        font-size: 15px !important; 
+    }
+
+    /* 3. Evitamos que la foto "aplace" al texto */
+    .contact-avatar {
+        flex-shrink: 0 !important;  /* La foto mantiene su tamaño y no pisa al nombre */
+    }
+
+    /* 4. Mantenemos el gris de selección en móvil */
+    .contact-item.selected {
+        background-color: #f0f2f5 !important;
+    }
+
+    /* Ocultar barra en Chrome, Safari y Opera */
+    .contacts-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Ocultar barra en Firefox e IE/Edge */
+    .contacts-list {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        padding-bottom: 20px; /* Espacio extra para que el último contacto no quede pegado al borde */
+        -webkit-overflow-scrolling: touch; /* Hace que el scroll se sienta "suave" como en una App nativa */
+    }
+}
+
+
 /* Para pantallas móviles (320px a 600px) */
 @media (max-width: 320px) {
     .sidebar {
-        flex: 1; /* En móvil, si no hay chat abierto, el sidebar ocupa todo */
+        flex: 1;
+        /* En móvil, si no hay chat abierto, el sidebar ocupa todo */
         min-width: 320px;
     }
 
@@ -195,19 +303,22 @@
         display: flex;
         align-items: center;
         padding: 12px 16px;
-        gap: 12px; /* Espacio entre foto y textos como en tu captura */
+        gap: 12px;
+        /* Espacio entre foto y textos como en tu captura */
     }
 
     .contact-avatar {
-        width: 55px; /* Tamaño exacto de la captura */
-        height: 55px;
+        flex-shrink: 0;
     }
 
     .contact-info-text {
+        flex: 1;
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
-        border-bottom: 1px solid #f2f2f2; /* Línea divisoria sutil */
+        margin-left: 12px;
+        min-width: 0;
+        border-bottom: 1px solid #f2f2f2;
+        /* Línea divisoria sutil */
         padding-bottom: 10px;
     }
 
@@ -216,6 +327,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
     }
 
     .contact-info-text h3 {
@@ -236,7 +348,8 @@
         color: #667781;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis; /* Para que no se pase de largo */
+        text-overflow: ellipsis;
+        /* Para que no se pase de largo */
         margin-top: 2px;
     }
 }
@@ -244,7 +357,9 @@
 /* --- AJUSTES PARA PANTALLAS GRANDES (1200px a 2000px) --- */
 @media (min-width: 1200px) {
     .sidebar {
-        flex: 0 0 25%; /* Que no crezca demasiado, 25% es ideal */
-        max-width: 400px; /* Límite para que no se vea gigante en 2000px */
+        flex: 0 0 25%;
+        /* Que no crezca demasiado, 25% es ideal */
+        max-width: 400px;
+        /* Límite para que no se vea gigante en 2000px */
     }
 }

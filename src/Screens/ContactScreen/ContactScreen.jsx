@@ -31,9 +31,6 @@ export default function ContactScreen() {
               <Link to="/" className="back-button">
                 <IoArrowBack />
               </Link>
-              <div>
-                <span className="icon"><CiMenuKebab /></span>
-              </div>
               <img
                 src={contact_selected?.profile_picture || "https://media-eze1-1.cdn.whatsapp.net/v/t61..."}
                 alt="avatar"

@@ -17,7 +17,8 @@
     width: 100%;
     height: 100vh;
     background-color: var(--bg-gray);
-    overflow: hidden; /* Evita scrolls raros en el body */
+    overflow: hidden;
+    /* Evita scrolls raros en el body */
 }
 
 .sidebar-wrapper {
@@ -34,7 +35,8 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    background-color: #efeae2; /* Color de fondo típico de chat */
+    background-color: #efeae2;
+    /* Color de fondo típico de chat */
 }
 
 /* --- ESTILOS DE CONTACTOS (Coherentes con tu JSX) --- */
@@ -57,12 +59,15 @@
     height: 49px;
     border-radius: 50%;
     object-fit: cover;
-    flex-shrink: 0; /* Impide que la foto se aplaste */
+    flex-shrink: 0;
+    /* Impide que la foto se aplaste */
 }
 
 .contact-info-text {
-    flex: 1; /* 👈 LLENA EL ESPACIO VACÍO */
-    min-width: 0; /* 👈 PERMITE QUE EL TEXTO SE CORTE CON ... */
+    flex: 1;
+    /* 👈 LLENA EL ESPACIO VACÍO */
+    min-width: 0;
+    /* 👈 PERMITE QUE EL TEXTO SE CORTE CON ... */
     display: flex;
     flex-direction: column;
     margin-left: 12px;
@@ -109,13 +114,16 @@
 @media (max-width: 768px) {
     .app-main-layout {
         /* Mantenemos flex pero ocultamos uno u otro según la clase chat-is-open */
-        flex-direction: row; 
+        flex-direction: row;
     }
 
-    .sidebar-wrapper, .content-wrapper {
+    .sidebar-wrapper {
+        display: flex;
         width: 100% !important;
-        min-width: 100% !important;
-        max-width: 100% !important;
+    }
+
+    .content-wrapper {
+        display: none;
     }
 
     /* Si el chat está abierto, escondemos la lista */
@@ -124,8 +132,15 @@
     }
 
     /* Si el chat está CERRADO, escondemos el área de mensajes */
-    .app-main-layout:not(.chat-is-open) .content-wrapper {
-        display: none !important;
+    .app-main-layout.chat-is-open .content-wrapper {
+        display: flex !important;
+        width: 100% !important;
+        position: fixed;
+        /* Lo fijamos para que ocupe toda la pantalla */
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 99;
     }
 }
 
@@ -135,7 +150,7 @@
         width: 42px;
         height: 42px;
     }
-    
+
     .contact-info-text h3 {
         font-size: 13px;
     }
@@ -158,6 +173,6 @@
     .app-main-layout {
         width: 1400px;
         height: 95vh;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     }
 }

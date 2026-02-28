@@ -1,17 +1,15 @@
 import React, { useContext, useState } from 'react' 
-import { Link } from 'react-router'
+import { Link, useParams } from 'react-router-dom' // Usamos useParams para el gris
 import { ContactsContext } from '../Context/ContactsContext'
 import './ContactSidebar.css'
 import { RiChatNewLine } from "react-icons/ri";
 import { CiMenuKebab } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
 
-
 export default function ContactSidebar() {
-
     const { contactsState } = useContext(ContactsContext) 
     const [searchQuery, setSearchQuery] = useState('');
-
+    const { contact_id } = useParams(); // Esto detecta el chat actual
 
     const filteredContacts = contactsState.filter(contact => 
         contact.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -48,41 +46,30 @@ export default function ContactSidebar() {
             </header>
 
             <div className="contacts-list">
-                {
-                    // 2. CAMBIO CLAVE: Usamos filteredContacts en lugar de contactsState
-                    filteredContacts?.map((contact) => {
-                        return (
-                            <Link
-                                to={`/contact/${contact.id}`}
-                                key={contact.id}
-                                className="contact-item"
-                            >
-                                <img
-                                    src={contact.profile_picture}
-                                    alt={contact.name}
-                                    className="contact-avatar"
-                                />
-
-                                <div className="contact-info-text">
-                                    <div className="contact-header-row">
-                                        <h3>{contact.name}</h3>
-                                        <span className="contact-date">{contact.last_time_connection}</span>
-                                    </div>
-                                    <p className="last-message-preview">
-                                        {contact.status || "Sin estado"}
-                                    </p>
-                                </div>
-                            </Link>
-                        )
-                    })
-                }
-                
-                {/* 3. OPCIONAL: Mensaje si no hay resultados */}
-                {filteredContacts.length === 0 && (
-                    <p style={{ textAlign: 'center', color: '#667781', marginTop: '20px' }}>
-                        No se encontraron contactos
-                    </p>
-                )}
+                {filteredContacts?.map((contact) => (
+                    <Link
+                        to={`/contact/${contact.id}`}
+                        key={contact.id}
+                        /* Agregamos la clase 'selected' si el ID coincide */
+                        className={`contact-item ${contact_id == contact.id ? 'selected' : ''}`}
+                    >
+                        <img
+                            src={contact.profile_picture}
+                            alt={contact.name}
+                            className="contact-avatar"
+                        />
+                        {/* ESTE DIV ES EL QUE MUESTRA EL TEXTO */}
+                        <div className="contact-info-text">
+                            <div className="contact-header-row">
+                                <h3>{contact.name}</h3>
+                                <span className="contact-date">{contact.last_time_connection}</span>
+                            </div>
+                            <p className="last-message-preview">
+                                {contact.status || "Sin estado"}
+                            </p>
+                        </div>
+                    </Link>
+                ))}
             </div>
         </div>
     )
