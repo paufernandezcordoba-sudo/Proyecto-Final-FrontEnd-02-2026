@@ -1,0 +1,63 @@
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: #f0f2f5;
+    border-bottom: 1px solid #d1d7db;
+    height: 60px; /* Altura estándar de WhatsApp */
+    box-sizing: border-box;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.header-info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111b21;
+}
+
+.header-status {
+    font-size: 12px;
+    color: #667781;
+}
+
+.header-right-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.header-icon-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    color: #54656f;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.header-icon-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}

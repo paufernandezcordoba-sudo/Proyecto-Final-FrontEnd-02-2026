@@ -99,9 +99,9 @@ export const contacts = [
     {
         id: 5,
         name: 'Ceci',
-        status: "Leyendo Kafka",
-        last_time_connection: '17:25 PM',
-        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/596293973_1430605508727567_7561596948160667924_n.jpg?ccb=11-4&oh=01_Q5Aa3wFkZp3FwDln-2wArA1oQdCNuqqXe5NYESPUGX_Z4L_RtA&oe=69AA4FEE&_nc_sid=5e03e0&_nc_cat=110v',
+        status: "Leyendo...",
+        last_time_connection: '11:45 AM',
+        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/202981229_405565964716715_9061677604199678937_n.jpg?ccb=11-4&oh=01_Q5Aa3wGHlQ_OwOVBi6Oq6E50UtAi6-yFHxdnRPj22xzNRsBWvg&oe=69B06360&_nc_sid=5e03e0&_nc_cat=105',
         messages: [
             {
                 id: 1,

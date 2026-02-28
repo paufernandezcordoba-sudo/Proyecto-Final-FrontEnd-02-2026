@@ -123,7 +123,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    padding: 10px 16px 0px 16px; /* Ajuste de padding superior */
 }
 
 .whatsapp-title {
@@ -134,17 +134,32 @@
 
 .header-icons {
     display: flex;
-    gap: 20px;
-    color: #54656f;
-    font-size: 20px;
-    cursor: pointer;
+    gap: 8px; /* Espaciado entre botones */
+    align-items: center;
 }
 
+.sidebar-icon-btn {
+    background: none;
+    border: none;
+    color: #54656f; /* El gris exacto de los iconos */
+    font-size: 22px; /* Tamaño similar al Header */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%; /* Esto hace el círculo perfecto */
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-icon-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Gris muy tenue al pasar el mouse */
+}
 /* BUSCADOR */
 .search-input-wrapper {
     background-color: #f0f2f5;
     border-radius: 20px;
-    border: 2px solid #1fa855;
+    border: 1px solid #54656f;
     padding: 0 12px;
     display: flex;
     align-items: center;

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react' 
+import React, { useContext, useState } from 'react'
 import { Link, useParams } from 'react-router-dom' // Usamos useParams para el gris
 import { ContactsContext } from '../Context/ContactsContext'
 import './ContactSidebar.css'
@@ -7,11 +7,11 @@ import { CiMenuKebab } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
 
 export default function ContactSidebar() {
-    const { contactsState } = useContext(ContactsContext) 
+    const { contactsState } = useContext(ContactsContext)
     const [searchQuery, setSearchQuery] = useState('');
     const { contact_id } = useParams(); // Esto detecta el chat actual
 
-    const filteredContacts = contactsState.filter(contact => 
+    const filteredContacts = contactsState.filter(contact =>
         contact.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
@@ -21,16 +21,20 @@ export default function ContactSidebar() {
                 <div className="header-top-row">
                     <h1 className="whatsapp-title">WhatsApp</h1>
                     <div className="header-icons">
-                        <span className="icon"><RiChatNewLine /></span>
-                        <span className="icon"><CiMenuKebab /></span>
+                        <button className="sidebar-icon-btn" title="Nuevo chat">
+                            <RiChatNewLine />
+                        </button>
+                        <button className="sidebar-icon-btn" title="Menú">
+                            <CiMenuKebab />
+                        </button>
                     </div>
                 </div>
 
                 <div className="search-container">
                     <div className="search-input-wrapper">
                         <span className="search-icon"><IoIosSearch /></span>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             placeholder="Buscar un chat o iniciar uno nuevo"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}

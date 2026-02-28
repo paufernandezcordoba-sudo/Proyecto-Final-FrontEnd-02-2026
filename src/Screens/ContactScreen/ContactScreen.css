@@ -10,14 +10,17 @@
     display: flex;
     height: 100vh;
     width: 100%;
-    overflow: hidden; /* Evita scrolls raros en toda la página */
+    overflow: hidden;
+    /* Evita scrolls raros en toda la página */
     background-color: #f0f2f5;
 }
 
 /* ---- SIDEBAR ---- */
 .sidebar-container {
-    width: 30%; /* Ocupa el 30% del ancho */
-    min-width: 260px; /* No se encoge más de esto para que sea legible */
+    width: 30%;
+    /* Ocupa el 30% del ancho */
+    min-width: 260px;
+    /* No se encoge más de esto para que sea legible */
     max-width: 400px;
     background-color: white;
     border-right: 1px solid #d1d7db;
@@ -29,10 +32,13 @@
 .chat-container {
 
     display: flex;
-    flex-direction: column; /* Alinea los elementos verticalmente */
-    height: 100vh;          /* Ocupa toda la altura de la pantalla */
+    flex-direction: column;
+    /* Alinea los elementos verticalmente */
+    height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
     width: 100%;
-    overflow: hidden;       /* Importante: el contenedor padre NO debe scrollear */
+    overflow: hidden;
+    /* Importante: el contenedor padre NO debe scrollear */
 }
 
 .chat-header {
@@ -40,7 +46,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f0f2f5; /* Gris clarito de WhatsApp */
+    background-color: #f0f2f5;
+    /* Gris clarito de WhatsApp */
     border-bottom: 1px solid #d1d7db;
     font-size: 20px;
 }
@@ -55,16 +62,19 @@
 .avatar {
     width: 45px;
     height: 45px;
-    border-radius: 50%; /* Esto hace que sea un círculo perfecto */
-    object-fit: cover; /* Evita que la foto se estire si no es cuadrada */
+    border-radius: 50%;
+    /* Esto hace que sea un círculo perfecto */
+    object-fit: cover;
+    /* Evita que la foto se estire si no es cuadrada */
 }
 
 /* El área central donde van los mensajes */
 .chat-messages-area {
-   flex-grow: 1;
+    flex-grow: 1;
     overflow-y: auto;
     padding: 20px;
-    background-color: #efeae2; /* Fondo crema */
+    background-color: #efeae2;
+    /* Fondo crema */
     background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
     background-repeat: repeat;
     background-size: 400px;
@@ -72,19 +82,22 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
 }
 
 .chat-input-area {
     flex-shrink: 0;
-    background-color: #f0f2f5; /* Color gris claro de la barra de escritura */
+    background-color: #f0f2f5;
+    /* Color gris claro de la barra de escritura */
     padding: 10px 15px;
     width: 100%;
-    box-sizing: border-box;    /* Asegura que el padding no rompa el ancho */
+    box-sizing: border-box;
+    /* Asegura que el padding no rompa el ancho */
 }
 
 .back-button {
-    display: none; /* Oculto por defecto en PC */
+    display: none;
+    /* Oculto por defecto en PC */
     font-size: 24px;
     color: #667781;
     margin-right: 10px;
@@ -92,26 +105,31 @@
     text-decoration: none;
     align-items: center;
 }
+
 /*MOBILE */
 /* Solo aparece cuando estamos en modo móvil */
 @media (max-width: 768px) {
     .back-button {
-        display: flex; /* Se vuelve visible en celulares */
+        display: flex;
+        /* Se vuelve visible en celulares */
     }
-    
+
     .chat-header {
-        padding-left: 10px; /* Ajustamos el padding para la flecha */
+        padding-left: 10px;
+        /* Ajustamos el padding para la flecha */
     }
 }
 
 @media (max-width: 320px) {
+
     /* En móviles, el Sidebar podría ocupar el 100% y el chat ocultarse, 
        o viceversa dependiendo de la ruta */
     .sidebar-container {
         width: 100% !important;
         display: block;
     }
+
     .chat-container {
-        display: none; 
+        display: none;
     }
 }

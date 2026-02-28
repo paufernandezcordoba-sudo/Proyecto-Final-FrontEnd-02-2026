@@ -5,6 +5,7 @@ import { IoArrowBack, IoCheckmarkDone } from "react-icons/io5";
 import { CiMenuKebab } from "react-icons/ci";
 import Messages from '../../Components/Messages/Messages';
 import NewMessageForm from '../../Components/NewMessageForm/NewMessageForm';
+import ChatHeader from '../../Components/ChatHeader/ChatHeader';
 import './ContactScreen.css';
 
 export default function ContactScreen() {
@@ -24,25 +25,7 @@ export default function ContactScreen() {
       ) : (
         <>
 
-          <header className="chat-header">
-            <div className="contact-info">
-
-              {/* Link con la flecha de volver */}
-              <Link to="/" className="back-button">
-                <IoArrowBack />
-              </Link>
-              <img
-                src={contact_selected?.profile_picture || "https://media-eze1-1.cdn.whatsapp.net/v/t61..."}
-                alt="avatar"
-                className="avatar"
-              />
-              <div className="contact-texts">
-                <h2>{contact_selected.name}</h2>
-                <span>{contact_selected.last_time_connection || "Conectado recientemente"}</span>
-              </div>
-            </div>
-
-          </header>
+          <ChatHeader contact={contact_selected} />
 
           <main className="chat-messages-area">
             <Messages contact_selected={contact_selected} />
