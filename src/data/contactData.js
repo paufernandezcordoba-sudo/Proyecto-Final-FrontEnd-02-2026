@@ -1,3 +1,5 @@
+import { BiPhone } from "react-icons/bi";
+
 export const contacts = [
     {
         id: 1,
@@ -5,6 +7,9 @@ export const contacts = [
         status: "Uuuur Aaaargggghhhhh",
         last_time_connection: '12:25 PM',
         profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/554319900_1466763377915507_5419813511984669955_n.jpg?ccb=11-4&oh=01_Q5Aa3wHVdT349xngaeZR-_kczjxkc2vYtprKyTdw5Mz3W-rSQQ&oe=69A73AD2&_nc_sid=5e03e0&_nc_cat=108',
+        phone_number: '+54 9 351 555 4567',
+        isUnread: false,
+        isFavorite: true,
         messages: [
             {
                 id: 1,
@@ -42,6 +47,7 @@ export const contacts = [
         status: "En la playa",
         last_time_connection: 'Hace 3 horas',
         profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/584285139_1362926308870772_6139413910314663675_n.jpg?ccb=11-4&oh=01_Q5Aa3wF2joNVXbeb6gQ1BgIMf7eLf-DqeOCE78P2GwnnX_AqeQ&oe=69A74687&_nc_sid=5e03e0&_nc_cat=105',
+        phone_number: '+54 9 351 366 6868',
         messages: [
             {
                 id: 1,
@@ -65,6 +71,9 @@ export const contacts = [
         status: "Ocupado - meet",
         last_time_connection: '3:45 PM',
         profile_picture: 'https://media.licdn.com/dms/image/v2/D4D03AQFn-dTV0DaG9w/profile-displayphoto-scale_200_200/B4DZxIdJ1uHAAY-/0/1770742133898?e=1773273600&v=beta&t=5CDCpDrtsY8ib2yHvQY8_np6Y5zAbYZiCR0WcSyoqpo',
+        phone_number: '+54 9 351 456 7890',
+        isUnread: true,
+        isFavorite: true,
         messages: [
             {
                 id: 1,
@@ -102,6 +111,7 @@ export const contacts = [
         status: "Leyendo...",
         last_time_connection: '11:45 AM',
         profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/202981229_405565964716715_9061677604199678937_n.jpg?ccb=11-4&oh=01_Q5Aa3wGHlQ_OwOVBi6Oq6E50UtAi6-yFHxdnRPj22xzNRsBWvg&oe=69B06360&_nc_sid=5e03e0&_nc_cat=105',
+        phone_number: '+54 9 351 123 4567',
         messages: [
             {
                 id: 1,
@@ -139,6 +149,7 @@ export const contacts = [
         status: "Consultorio",
         last_time_connection: '17:05 PM',
         profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/597345452_1534108297666682_6097241335697495047_n.jpg?ccb=11-4&oh=01_Q5Aa3wHPrfJ9pIWbOOBlkf5s0egzJ4bQnn74KI46xrn1orIyAA&oe=69AA4ABF&_nc_sid=5e03e0&_nc_cat=106',
+        phone_number: '+54 9 351 322 4467',
         messages: [
             {
                 id: 1,
@@ -176,6 +187,7 @@ export const contacts = [
         status: "Senderismo en las sierras",
         last_time_connection: 'Hace 20 minutos',
         profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/549706892_847367681155441_1609132800081433350_n.jpg?ccb=11-4&oh=01_Q5Aa3wFsCWIwNzyjpg_sNECKdGrrs-QHXeX9MQWGExHvOB6kGw&oe=69AA4AD0&_nc_sid=5e03e0&_nc_cat=107',
+        phone_number: '+54 9 351 633 4887',
         messages: [
             {
                 id: 1,
@@ -213,6 +225,9 @@ export const contacts = [
         status: "TROPEA - ITALIA",
         last_time_connection: '04:25 PM',
         profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/56711332_790320687995173_503510436428120064_n.jpg?ccb=11-4&oh=01_Q5Aa3wHEupKGXGfCMShhBSF_kBWg1M9xI1bfK8zoU3-aUp9ekA&oe=69AE1BA2&_nc_sid=5e03e0&_nc_cat=105',
+        phone_number: '+39 9 351 678 5560',
+        isUnread: true,
+        isFavorite: true,
         messages: [
             {
                 id: 1,
@@ -287,6 +302,8 @@ export const contacts = [
         status: "La vie est belle",
         last_time_connection: '04:25 PM',
         profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/311563059_1316410109094402_4861592827455682984_n.jpg?ccb=11-4&oh=01_Q5Aa3wHtY5OjIErGWaTrkdCd8yXwf_pE0T_ScyqDIUM-u8yLNw&oe=69AE1AA2&_nc_sid=5e03e0&_nc_cat=111',
+        phone_number: '+54 9 351 449 6567',
+        isFavorite: true,
         messages: [
             {
                 id: 1,

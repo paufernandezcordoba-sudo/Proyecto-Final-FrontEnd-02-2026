@@ -1,9 +1,24 @@
+html, body {
+    height: 100dvh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 /* --- VARIABLES Y RESET --- */
 :root {
     --whatsapp-green: #00a884;
     --bg-gray: #f0f2f5;
     --border-color: #d1d7db;
 }
+
 
 * {
     margin: 0;
@@ -36,10 +51,9 @@
     display: flex;
     flex-direction: column;
     background-color: #efeae2;
-    /* Color de fondo típico de chat */
 }
 
-/* --- ESTILOS DE CONTACTOS (Coherentes con tu JSX) --- */
+/* ESTILOS DE CONTACTOS */
 .contact-item {
     display: flex;
     align-items: center;
@@ -60,14 +74,11 @@
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
-    /* Impide que la foto se aplaste */
 }
 
 .contact-info-text {
     flex: 1;
-    /* 👈 LLENA EL ESPACIO VACÍO */
     min-width: 0;
-    /* 👈 PERMITE QUE EL TEXTO SE CORTE CON ... */
     display: flex;
     flex-direction: column;
     margin-left: 12px;
@@ -80,7 +91,7 @@
 }
 
 .contact-info-text h3 {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     color: #111b21;
     white-space: nowrap;
@@ -136,7 +147,6 @@
         display: flex !important;
         width: 100% !important;
         position: fixed;
-        /* Lo fijamos para que ocupe toda la pantalla */
         top: 0;
         left: 0;
         height: 100vh;

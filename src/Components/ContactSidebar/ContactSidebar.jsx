@@ -9,11 +9,21 @@ import { IoIosSearch } from "react-icons/io";
 export default function ContactSidebar() {
     const { contactsState } = useContext(ContactsContext)
     const [searchQuery, setSearchQuery] = useState('');
-    const { contact_id } = useParams(); // Esto detecta el chat actual
+    const [activeFilter, setActiveFilter] = useState('Todos');
+    const { contact_id } = useParams();
 
-    const filteredContacts = contactsState.filter(contact =>
-        contact.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const filteredContacts = contactsState.filter(contact => {
+        const matchesSearch = contact.name.toLowerCase().includes(searchQuery.toLowerCase());
+
+        if (activeFilter === 'No leídos') {
+            return matchesSearch && contact.isUnread;
+        }
+        if (activeFilter === 'Favoritos') {
+            return matchesSearch && contact.isFavorite;
+        }
+
+        return matchesSearch;
+    });
 
     return (
         <div className="sidebar-content">
@@ -43,9 +53,15 @@ export default function ContactSidebar() {
                 </div>
 
                 <div className="filters-container">
-                    <button className="filter-pill active">Todos</button>
-                    <button className="filter-pill">No leídos</button>
-                    <button className="filter-pill">Favoritos</button>
+                    {['Todos', 'No leídos', 'Favoritos'].map((filter) => (
+                        <button
+                            key={filter}
+                            className={`filter-pill ${activeFilter === filter ? 'active' : ''}`}
+                            onClick={() => setActiveFilter(filter)}
+                        >
+                            {filter}
+                        </button>
+                    ))}
                 </div>
             </header>
 
