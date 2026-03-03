@@ -1,26 +1,23 @@
-/* Reseteo básico para que no haya márgenes raros */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Contenedor que ocupa toda la pantalla */
 .app-container {
     display: flex;
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     overflow: hidden;
-    /* Evita scrolls raros en toda la página */
     background-color: #f0f2f5;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-/* ---- SIDEBAR ---- */
 .sidebar-container {
     width: 30%;
-    /* Ocupa el 30% del ancho */
     min-width: 260px;
-    /* No se encoge más de esto para que sea legible */
     max-width: 400px;
     background-color: white;
     border-right: 1px solid #d1d7db;
@@ -28,21 +25,6 @@
     flex-direction: column;
 }
 
-/* El contenedor lateral que empuja el chat */
-.right-sidebar {
-    width: 350px;
-    /* Ancho estándar de WhatsApp Web */
-    background-color: #ffffff;
-    border-left: 1px solid #d1d7db;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    /* Por si la info del contacto es larga */
-    transition: all 0.3s ease;
-    /* Transición suave al abrir */
-}
-
-/* Estilo compartido para los encabezados de los paneles (Info y Buscar) */
 .header-panel {
     display: flex;
     align-items: center;
@@ -54,7 +36,8 @@
 
 .header-panel h3 {
     margin: 0;
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 500;
     color: #41525d;
 }
 
@@ -66,12 +49,12 @@
     gap: 10px;
 }
 
-/* El botón de cerrar (la X) */
 .close-search-btn {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 20px;
+    font-weight: 800;
     color: #54656f;
     padding: 5px;
     display: flex;
@@ -84,6 +67,13 @@
     color: #3b4a54;
 }
 
+.body-panel .right-panel-search {
+    display: block;
+    font-size: 14px;
+    color: #747576;
+    margin-top: 25px !important;
+}
+
 .body-panel {
     padding: 10px 20px;
     background-color: white;
@@ -91,14 +81,13 @@
 
 .body-panel input {
     width: 100%;
-    padding: 8px 12px;
+    padding: 8px 20px;
     border: 2px solid #00A884;
     border-radius: 20px;
     background-color: #f0f2f5;
     outline: none;
 }
 
-/* Estilo para los botones de cerrar */
 .header-panel button {
     background: none;
     border: none;
@@ -108,23 +97,26 @@
 }
 
 .chat-container {
-
     display: flex;
     flex-direction: column;
     height: 100dvh;
     width: 100%;
     overflow: hidden;
-
+    position: relative;
 }
 
 .chat-header {
     display: flex;
+    flex: 0 0 60px;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
     padding: 10px 20px;
     background-color: #f0f2f5;
     border-bottom: 1px solid #d1d7db;
     font-size: 20px;
+    width: 100%;
+    z-index: 10;
 }
 
 .contact-info {
@@ -133,46 +125,56 @@
     gap: 10px;
 }
 
-/* FOTOS REDONDAS */
 .avatar {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    /*bien circular */
     object-fit: cover;
-    /*para que no se deforme la imagen */
 }
 
-/* Área central de mensajes */
 .chat-messages-area {
-    flex-grow: 1;
+    flex: 1;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     background-color: #efeae2;
-
     background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
     background-repeat: repeat;
     background-size: 400px;
     background-blend-mode: multiply;
-    display: flex;
-    flex-direction: column;
     gap: 8px;
     -webkit-overflow-scrolling: touch;
 }
 
 .chat-input-area {
-    flex-shrink: 0;
+    flex: 0 0 auto;
     background-color: #f0f2f5;
-    /*color textos escritos */
     padding: 10px 15px;
     width: 100%;
+    z-index: 10;
     box-sizing: border-box;
+}
 
+.chat-body-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-sidebar {
+    background: white;
+    z-index: 100;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .back-button {
     display: none;
-    /*para que la flecha no se vea en escritorio*/
     font-size: 24px;
     color: #667781;
     margin-right: 10px;
@@ -224,60 +226,32 @@
     color: #111b21;
 }
 
-/*MOBILE */
 
-@media (max-width: 768px) {
-    .back-button {
-        display: flex;
-        /*flechita que se ve solo en celular*/
-    }
-
-    .chat-header {
-        padding-left: 10px;
-    }
-
+/*MOBILE*/
+@media (max-width: 767px) {
     .right-sidebar {
-        position: absolute;
-        /* Se superpone en móvil */
+        position: fixed;
         top: 0;
         right: 0;
         width: 100%;
-        /* Ocupa toda la pantalla */
         height: 100%;
-        z-index: 100;
-        /* Asegura que tape todo */
+    }
+    
+    .back-btn {
+        display: flex !important;
     }
 }
 
-@media (max-width: 320px) {
-
-    /* En móviles, el Sidebar podría ocupar el 100% y el chat ocultarse, 
-       o viceversa dependiendo de la ruta, esto fundamental, no fue fácil */
-    .sidebar-container {
-        width: 100% !important;
-        display: block;
+/* ESCRITORIO: Para pantallas grandes */
+@media (min-width: 768px) {
+    .right-sidebar {
+        position: relative;
+        width: 350px;
+        flex: 0 0 350px;
+        border-left: 1px solid #ddd;
     }
-
-    .chat-container {
-        display: none;
-    }
-
-    .chat-header {
-        padding: 5px 10px;
-    }
-
-    .header-avatar {
-        width: 35px;
-        height: 35px;
-    }
-
-    /* Si el buscador de mensajes se ve apretado, ajustamos el font-size */
-    .search-panel h3 {
-        font-size: 14px;
-    }
-
-    /* Aseguramos que los botones de cerrar sean fáciles de tocar */
-    .header-panel button {
-        padding: 10px;
+    
+    .back-btn {
+        display: none !important;
     }
 }

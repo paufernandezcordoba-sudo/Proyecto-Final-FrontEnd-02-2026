@@ -17,6 +17,14 @@
     gap: 12px;
 }
 
+.back-btn {
+    display: none;
+    margin-right: 8px;
+    font-size: 24px;
+    color: #54656f;
+    text-decoration: none;
+}
+
 .header-avatar {
     width: 40px;
     height: 40px;
@@ -34,11 +42,13 @@
     font-size: 16px; 
     font-weight: 500;
     color: #111b21;
+    margin-left: 10px;
 }
 
 .chat-header .header-status {
     font-size: 12px; 
     color: #667781;
+    margin-left: 10px;
 }
 
 .header-right-actions {
@@ -62,4 +72,26 @@
 
 .header-icon-btn:hover {
     background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .back-btn {
+        display: flex;
+        align-items: center;
+    }
+
+    .chat-header {
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; 
+        background-color: #f0f2f5; 
+    }
+
+    .chat-messages-area {
+        margin-top: 60px; 
+        height: calc(100dvh - 60px - 70px); 
+    }
 }

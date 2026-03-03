@@ -6,27 +6,30 @@ import { CiMenuKebab } from "react-icons/ci";
 import './ChatHeader.css';
 
 export default function ChatHeader({ contact, onSearchClick, onInfoClick }) {
-    // Si todavía no hay un contacto seleccionado, retornamos null para que no rompa
     if (!contact) return null;
 
 return (
-        <header className="chat-header">
-            {/* Pruebo a ver cómo abre la info de contacto desde la foto y estado arriba en header */}
-            <div className="header-left" onClick={onInfoClick} style={{ cursor: 'pointer' }}>
+    <header className="chat-header">
+        <div className="header-left">
+            <Link to="/" className="back-btn">
+                <IoArrowBack />
+            </Link>
+            <div className="header-click-area" onClick={onInfoClick} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
                 <img src={contact.profile_picture} alt={contact.name} className="header-avatar" />
                 <div className="header-info-text">
                     <span className="header-name">{contact.name}</span>
-                    <span className="header-status">en línea</span>
+                    <span className="header-status">
+                        {contact.last_time_connection}
+                    </span>
                 </div>
             </div>
-
-            <div className="header-right-actions">
-                {/* Buscar mensajes lupa*/}
-                <button className="header-icon-btn" onClick={onSearchClick}>
-                    <IoSearchOutline />
-                </button>
-                <button className="header-icon-btn"><CiMenuKebab /></button>
-            </div>
-        </header>
-    );
+        </div>
+        <div className="header-right-actions">
+            <button className="header-icon-btn" onClick={onSearchClick}>
+                <IoSearchOutline />
+            </button>
+            <button className="header-icon-btn"><CiMenuKebab /></button>
+        </div>
+    </header>
+);
 }

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link, useParams } from 'react-router-dom' // Usamos useParams para el gris
+import { Link, useParams } from 'react-router-dom'
 import { ContactsContext } from '../Context/ContactsContext'
 import './ContactSidebar.css'
 import { RiChatNewLine } from "react-icons/ri";
@@ -70,7 +70,7 @@ export default function ContactSidebar() {
                     <Link
                         to={`/contact/${contact.id}`}
                         key={contact.id}
-                        /* Agregamos la clase 'selected' si el ID coincide */
+
                         className={`contact-item ${contact_id == contact.id ? 'selected' : ''}`}
                     >
                         <img
@@ -78,7 +78,6 @@ export default function ContactSidebar() {
                             alt={contact.name}
                             className="contact-avatar"
                         />
-                        {/* ESTE DIV ES EL QUE MUESTRA EL TEXTO */}
                         <div className="contact-info-text">
                             <div className="contact-header-row">
                                 <h3>{contact.name}</h3>

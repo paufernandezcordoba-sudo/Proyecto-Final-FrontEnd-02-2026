@@ -36,7 +36,7 @@
     border-radius: 50%;
     /* FOTO circular */
     object-fit: cover;
-    margin-right: 15px;
+    margin-right: 8px;
 }
 
 .contact-info-text {
@@ -239,78 +239,64 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* Agrega los puntos suspensivos ... */
 }
 
 @media (max-width: 768px) {
-    /* 1. Forzamos a que el contenedor de texto ocupe espacio */
     .contact-info-text {
-        display: flex !important;   /* Que no se oculte */
-        flex: 1 !important;         /* Que use todo el ancho disponible al lado de la foto */
-        min-width: 0 !important;    /* Permite que el texto se ajuste sin desbordar */
+        display: flex !important; 
+        flex: 1 !important; 
+        min-width: 0 !important;
     }
 
-    /* 2. Aseguramos que el nombre (h3) sea visible */
     .contact-info-text h3 {
         display: block !important;
-        color: #111b21 !important;  /* Color oscuro para que se vea bien */
+        color: #111b21 !important; 
         font-size: 15px !important; 
     }
 
-    /* 3. Evitamos que la foto "aplace" al texto */
     .contact-avatar {
-        flex-shrink: 0 !important;  /* La foto mantiene su tamaño y no pisa al nombre */
+        flex-shrink: 0 !important; 
     }
 
-    /* 4. Mantenemos el gris de selección en móvil */
     .contact-item.selected {
         background-color: #f0f2f5 !important;
     }
 }@media (max-width: 768px) {
-    /* 1. Forzamos a que el contenedor de texto ocupe espacio */
     .contact-info-text {
-        display: flex !important;   /* Que no se oculte */
-        flex: 1 !important;         /* Que use todo el ancho disponible al lado de la foto */
-        min-width: 0 !important;    /* Permite que el texto se ajuste sin desbordar */
+        display: flex !important;
+        flex: 1 !important; 
+        min-width: 0 !important; 
     }
 
-    /* 2. Aseguramos que el nombre (h3) sea visible */
     .contact-info-text h3 {
         display: block !important;
-        color: #111b21 !important;  /* Color oscuro para que se vea bien */
+        color: #111b21 !important; 
         font-size: 15px !important; 
     }
 
-    /* 3. Evitamos que la foto "aplace" al texto */
     .contact-avatar {
-        flex-shrink: 0 !important;  /* La foto mantiene su tamaño y no pisa al nombre */
+        flex-shrink: 0 !important;  
     }
 
-    /* 4. Mantenemos el gris de selección en móvil */
     .contact-item.selected {
         background-color: #f0f2f5 !important;
     }
 
-    /* Ocultar barra en Chrome, Safari y Opera */
     .contacts-list::-webkit-scrollbar {
         display: none;
     }
 
-    /* Ocultar barra en Firefox e IE/Edge */
     .contacts-list {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-        padding-bottom: 20px; /* Espacio extra para que el último contacto no quede pegado al borde */
-        -webkit-overflow-scrolling: touch; /* Hace que el scroll se sienta "suave" como en una App nativa */
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
-
-/* Para pantallas móviles (320px a 600px) */
 @media (max-width: 320px) {
     .sidebar {
         flex: 1;
-        /* En móvil, si no hay chat abierto, el sidebar ocupa todo */
         min-width: 320px;
     }
 
@@ -319,7 +305,6 @@
         align-items: center;
         padding: 12px 16px;
         gap: 12px;
-        /* Espacio entre foto y textos como en tu captura */
     }
 
     .contact-avatar {
@@ -333,11 +318,9 @@
         margin-left: 12px;
         min-width: 0;
         border-bottom: 1px solid #f2f2f2;
-        /* Línea divisoria sutil */
         padding-bottom: 10px;
     }
 
-    /* El nombre y la fecha en la misma línea */
     .contact-header-row {
         display: flex;
         justify-content: space-between;
@@ -357,14 +340,12 @@
         color: #667781;
     }
 
-    /* El mensaje de abajo (novedades, fotos, etc) */
     .last-message-preview {
         font-size: 12px;
         color: #667781;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        /* Para que no se pase de largo */
         margin-top: 2px;
     }
 }
@@ -373,8 +354,6 @@
 @media (min-width: 1200px) {
     .sidebar {
         flex: 0 0 25%;
-        /* Que no crezca demasiado, 25% es ideal */
         max-width: 400px;
-        /* Límite para que no se vea gigante en 2000px */
     }
 }

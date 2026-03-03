@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef, useEffect } from 'react';
 import { ContactsContext } from '../../Components/Context/ContactsContext';
 import { useParams } from 'react-router-dom';
 import Messages from '../../Components/Messages/Messages';
@@ -22,8 +22,16 @@ export default function ContactScreen() {
 
   const [showInfo, setShowInfo] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
-  // Funciones para alternar paneles
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+    }
+  }, [contactsState, contact_id]);
+
   const toggleInfo = () => {
     setShowInfo(!showInfo);
     setShowSearch(false);
@@ -52,8 +60,9 @@ export default function ContactScreen() {
 
           <div className="chat-body-wrapper" style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
             <div className="chat-main-content" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-              <main className="chat-messages-area" style={{ flex: 1, overflowY: 'auto' }}>
-                <Messages contact_selected={contact_selected} />
+
+              <main className="chat-messages-area" ref={messagesEndRef} style={{ flex: 1, overflowY: 'auto' }}>
+                <Messages contact_selected={contact_selected} searchTerm={searchTerm} />
               </main>
 
               <footer className="chat-input-area">
@@ -61,7 +70,6 @@ export default function ContactScreen() {
               </footer>
             </div>
 
-            {/* Panel Lateral (Info o Búsqueda) */}
             {(showInfo || showSearch) && (
               <div className="right-sidebar">
                 {showInfo && (
@@ -95,8 +103,13 @@ export default function ContactScreen() {
                       <h3>Buscar mensajes</h3>
                     </div>
                     <div className="body-panel">
-                      <input type="text" placeholder="Buscar..." />
-                      <p>Buscar mensajes con {contact_selected.name}</p>
+                      <input
+                        type="text"
+                        placeholder="Buscar..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                      />
+                      <p className="right-panel-search">Buscar mensajes con {contact_selected.name}</p>
                     </div>
                   </div>
                 )}

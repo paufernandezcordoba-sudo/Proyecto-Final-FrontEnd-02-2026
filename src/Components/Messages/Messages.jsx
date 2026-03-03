@@ -2,11 +2,15 @@ import React from 'react'
 import { IoCheckmarkDone } from "react-icons/io5";
 import './Messages.css'
 
-export default function Messages({ contact_selected }) {
+export default function Messages({ contact_selected, searchTerm }) {
+    const filteredMessages = contact_selected.messages.filter(msg =>
+        msg.text.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <div className="messages-container">
             {
-                contact_selected.messages.map(message => {
+                filteredMessages.map(message => {
 
                     const isMe = message.send_by_me;
 
@@ -22,7 +26,10 @@ export default function Messages({ contact_selected }) {
                                     <span className="message-time">
                                         {message.time || message.hour}
                                     </span>
-                                    {isMe && <IoCheckmarkDone className="check-mark-icon" style={{ color: message.is_read ? '#53bdeb' : '#8696a0' }} />}
+                                    {<IoCheckmarkDone
+                                        className="check-mark-icon"
+                                        style={{ color: message.is_read ? '#53bdeb' : '#8696a0' }}
+                                    />}
                                 </div>
                             </div>
                         </div>

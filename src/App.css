@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100dvh;
     overflow: hidden;
     margin: 0;
@@ -33,7 +34,6 @@ html, body {
     height: 100vh;
     background-color: var(--bg-gray);
     overflow: hidden;
-    /* Evita scrolls raros en el body */
 }
 
 .sidebar-wrapper {
@@ -124,7 +124,6 @@ html, body {
 /* --- RESPONSIVE: MÓVILES (768px y menor) --- */
 @media (max-width: 768px) {
     .app-main-layout {
-        /* Mantenemos flex pero ocultamos uno u otro según la clase chat-is-open */
         flex-direction: row;
     }
 
@@ -137,12 +136,10 @@ html, body {
         display: none;
     }
 
-    /* Si el chat está abierto, escondemos la lista */
     .app-main-layout.chat-is-open .sidebar-wrapper {
         display: none !important;
     }
 
-    /* Si el chat está CERRADO, escondemos el área de mensajes */
     .app-main-layout.chat-is-open .content-wrapper {
         display: flex !important;
         width: 100% !important;

@@ -1,12 +1,11 @@
-
 .message-form {
     display: flex;
-    align-items: flex-end; /* Alinea el botón con la base del texto */
+    align-items: flex-end; 
     padding: 10px 15px;
-    background-color: #f0f2f5; /* Color de fondo de la barra de WhatsApp */
+    background-color: #f0f2f5; 
     gap: 10px;
     border-top: 1px solid #d1d7db;
-    position: sticky; /* Se asegura de quedarse abajo si el padre es flex */
+    position: sticky;
     bottom: 0;
     width: 100%;
 }
@@ -23,41 +22,40 @@
     width: 100%;
     border: none;
     outline: none;
-    resize: none; /* Evita que el usuario lo deforme manualmente */
+    resize: none; 
     font-size: 15px;
     font-family: inherit;
     padding: 5px;
     background: transparent;
-    max-height: 120px; /* Para que no crezca infinito */
+    max-height: 120px; 
     display: block;
+    scroll-margin-bottom: 20px;
 }
 
 .send-button {
     background: none;
     border: none;
-    color: #54656f; /* Color gris de iconos de WhatsApp */
+    color: #54656f; 
     font-size: 24px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 5px; /* Ajuste fino para centrar con el input */
+    padding-bottom: 5px;
 }
 
 .send-button:hover {
-    color: #1fa855; /* Cambia a verde al pasar el mouse */
+    color: #1fa855; 
 }
 
 html, body, #root {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Evita el rebote de scroll en todo el cuerpo */
+    overflow: hidden; 
 }
 
 @media (max-width: 768px) {
-    /* Forzamos al contenedor principal del chat (el que envuelve a este form) 
-       a medir exactamente lo que mide la pantalla visible */
     .content-wrapper { 
         height: 100dvh !important; 
         display: flex;
@@ -65,10 +63,8 @@ html, body, #root {
     }
 
     .message-form {
-        /* En mobile, cambiamos sticky por algo más seguro si es necesario */
         position: relative; 
         bottom: 0;
-        /* Evita que el teclado del celu tape el input en algunos navegadores */
         padding-bottom: 12px; 
         border-radius: 0;
     }

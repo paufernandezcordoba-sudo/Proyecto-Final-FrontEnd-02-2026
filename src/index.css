@@ -1,33 +1,42 @@
-body {
+html, body {
+    height: 100%; 
     margin: 0;
+    padding: 0;
+    overflow: hidden; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     background-color: #f0f2f5;
+    overscroll-behavior: none; 
+    width: 100%;
+    position: fixed;
 }
 
-/* ... tus estilos normales arriba ... */
-
-/* --- AJUSTES RESPONSIVOS AL FINAL --- */
+#root {
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
 
 /* Pantallas pequeñas (Móviles) */
 @media (max-width: 600px) {
     .sidebar {
-        flex: 0 0 70px; /* Se achica el sidebar al mínimo */
+        flex: 0 0 70px;
         min-width: 70px;
     }
-    
+
     .contact-info-text {
-        display: none; /* Escondemos el texto para que no se amontone */
+        display: none;
     }
 }
 
-/* Pantallas extra grandes (Monitores 2000px) */
+/* Pantallas extra grandes */
 @media (min-width: 1440px) {
     .app-container {
-        max-width: 1600px; /* Evita que el chat se estire infinitamente */
-        margin: 0 auto;    /* Lo centra en la pantalla */
-        height: 95vh;      /* Le da un aire arriba y abajo */
-        margin-top: 2.5vh;
+        max-width: 1600px;
+        margin: 0 auto;
+        height: 95dvh; 
+        margin-top: 2.5dvh;
         border-radius: 6px;
         overflow: hidden;
     }
