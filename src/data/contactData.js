@@ -6,7 +6,7 @@ export const contacts = [
         name: 'Chuwaka',
         status: "Uuuur Aaaargggghhhhh",
         last_time_connection: '12:25 PM',
-        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/554319900_1466763377915507_5419813511984669955_n.jpg?ccb=11-4&oh=01_Q5Aa3wHVdT349xngaeZR-_kczjxkc2vYtprKyTdw5Mz3W-rSQQ&oe=69A73AD2&_nc_sid=5e03e0&_nc_cat=108',
+        profile_picture: 'https://i.pinimg.com/736x/fe/9e/6b/fe9e6b7f9d5b4a0529982852bed8ad89.jpg',
         phone_number: '+54 9 351 555 4567',
         isUnread: false,
         isFavorite: true,
@@ -46,7 +46,7 @@ export const contacts = [
         name: 'Marcela',
         status: "En la playa",
         last_time_connection: 'Hace 3 horas',
-        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/584285139_1362926308870772_6139413910314663675_n.jpg?ccb=11-4&oh=01_Q5Aa3wF2joNVXbeb6gQ1BgIMf7eLf-DqeOCE78P2GwnnX_AqeQ&oe=69A74687&_nc_sid=5e03e0&_nc_cat=105',
+        profile_picture: 'https://i.pinimg.com/736x/dc/44/68/dc4468917339e0c8479834f6b5d83dfa.jpg',
         phone_number: '+54 9 351 366 6868',
         messages: [
             {
@@ -70,7 +70,7 @@ export const contacts = [
         name: 'Martín',
         status: "Ocupado - meet",
         last_time_connection: '3:45 PM',
-        profile_picture: 'https://media.licdn.com/dms/image/v2/D4D03AQFn-dTV0DaG9w/profile-displayphoto-scale_200_200/B4DZxIdJ1uHAAY-/0/1770742133898?e=1773273600&v=beta&t=5CDCpDrtsY8ib2yHvQY8_np6Y5zAbYZiCR0WcSyoqpo',
+        profile_picture: 'https://i.pinimg.com/1200x/c6/d8/84/c6d8840cba420badf1713f3e9743730a.jpg',
         phone_number: '+54 9 351 456 7890',
         isUnread: true,
         isFavorite: true,
@@ -110,7 +110,7 @@ export const contacts = [
         name: 'Ceci',
         status: "Leyendo...",
         last_time_connection: '11:45 AM',
-        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/202981229_405565964716715_9061677604199678937_n.jpg?ccb=11-4&oh=01_Q5Aa3wGHlQ_OwOVBi6Oq6E50UtAi6-yFHxdnRPj22xzNRsBWvg&oe=69B06360&_nc_sid=5e03e0&_nc_cat=105',
+        profile_picture: 'https://i.pinimg.com/736x/41/4c/e1/414ce1db9b021d4d3d6508fc286f88f8.jpg',
         phone_number: '+54 9 351 123 4567',
         messages: [
             {
@@ -148,7 +148,7 @@ export const contacts = [
         name: 'Gabriela dentista',
         status: "Consultorio",
         last_time_connection: '17:05 PM',
-        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/597345452_1534108297666682_6097241335697495047_n.jpg?ccb=11-4&oh=01_Q5Aa3wHPrfJ9pIWbOOBlkf5s0egzJ4bQnn74KI46xrn1orIyAA&oe=69AA4ABF&_nc_sid=5e03e0&_nc_cat=106',
+        profile_picture: 'https://i.pinimg.com/736x/6d/c0/fa/6dc0fa38b97cc6d476687a1f738f28d3.jpg',
         phone_number: '+54 9 351 322 4467',
         messages: [
             {
@@ -186,7 +186,7 @@ export const contacts = [
         name: 'Silvia C.',
         status: "Senderismo en las sierras",
         last_time_connection: 'Hace 20 minutos',
-        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/549706892_847367681155441_1609132800081433350_n.jpg?ccb=11-4&oh=01_Q5Aa3wFsCWIwNzyjpg_sNECKdGrrs-QHXeX9MQWGExHvOB6kGw&oe=69AA4AD0&_nc_sid=5e03e0&_nc_cat=107',
+        profile_picture: 'https://i.pinimg.com/736x/23/ad/8d/23ad8d55c706d4b60b3c35086dd68dd7.jpg',
         phone_number: '+54 9 351 633 4887',
         messages: [
             {
@@ -224,7 +224,7 @@ export const contacts = [
         name: 'Felicia F.',
         status: "TROPEA - ITALIA",
         last_time_connection: '04:25 PM',
-        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/56711332_790320687995173_503510436428120064_n.jpg?ccb=11-4&oh=01_Q5Aa3wHEupKGXGfCMShhBSF_kBWg1M9xI1bfK8zoU3-aUp9ekA&oe=69AE1BA2&_nc_sid=5e03e0&_nc_cat=105',
+        profile_picture: 'https://i.pinimg.com/736x/e6/83/c1/e683c1b29dc99778b80fa071b74cbf2b.jpg',
         phone_number: '+39 9 351 678 5560',
         isUnread: true,
         isFavorite: true,
@@ -264,7 +264,7 @@ export const contacts = [
         name: 'Marian',
         status: "Hola! Estoy usando WhatsApp",
         last_time_connection: 'Hace 35 minutos',
-        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/521167526_877260411453032_8575331466624503716_n.jpg?ccb=11-4&oh=01_Q5Aa3wGc87Ha5qj8BxSEvmhoGHNu3bt5vcBpPjnE4brv2D4rEw&oe=69AE1DC3&_nc_sid=5e03e0&_nc_cat=109',
+        profile_picture: 'https://i.pinimg.com/736x/19/fb/2d/19fb2db060fda96775fd5de6e19c558d.jpg',
         messages: [
             {
                 id: 1,
@@ -301,7 +301,7 @@ export const contacts = [
         name: 'Irma vecina',
         status: "La vie est belle",
         last_time_connection: '04:25 PM',
-        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/311563059_1316410109094402_4861592827455682984_n.jpg?ccb=11-4&oh=01_Q5Aa3wHtY5OjIErGWaTrkdCd8yXwf_pE0T_ScyqDIUM-u8yLNw&oe=69AE1AA2&_nc_sid=5e03e0&_nc_cat=111',
+        profile_picture: 'https://i.pinimg.com/1200x/1a/fc/36/1afc36212aaa0856be80e3753f046e37.jpg',
         phone_number: '+54 9 351 449 6567',
         isFavorite: true,
         messages: [
@@ -340,7 +340,7 @@ export const contacts = [
         name: 'Rodri Molina',
         status: "Didactizador",
         last_time_connection: '10:06 AM',
-        profile_picture: 'https://media-eze1-1.cdn.whatsapp.net/v/t61.24694-24/625680081_4390802044533978_1313379803618118303_n.jpg?ccb=11-4&oh=01_Q5Aa3wFTruq1VYkpRogStlvCJwzngR7ZZAKwE6jZjjwlzRIq2Q&oe=69AE0960&_nc_sid=5e03e0&_nc_cat=104',
+        profile_picture: 'https://i.pinimg.com/736x/63/cc/05/63cc05d1ebeb61b33358d619e8d93f4b.jpg',
         messages: [
             {
                 id: 1,
